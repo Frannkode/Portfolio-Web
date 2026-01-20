@@ -100,7 +100,7 @@ function App() {
         <div className="relative z-10 container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side */}
           <div className="text-left">
-            <h1 className="text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Hola, soy <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Desarrollador Front-End</span>
             </h1>
             <p className="text-xl mb-8 text-gray-300">Creo experiencias web modernas y funcionales</p>
@@ -115,9 +115,9 @@ function App() {
           </div>
           {/* Right Side */}
           <div className="flex justify-center lg:justify-start">
-            <div className="w-64 h-64 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 p-2 relative">
+            <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 p-2 relative">
               <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center">
-                <LuCode className="text-8xl text-purple-400" />
+                <LuCode className="text-6xl sm:text-7xl md:text-8xl text-purple-400" />
               </div>
             </div>
           </div>

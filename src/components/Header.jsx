@@ -44,8 +44,8 @@ export function Header() {
             onClick={() => scrollToSection('hero')}
             className="text-2xl font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300"
           >
-            <span className="text-slate-900 dark:text-white">Fran</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">kode</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-sky-300">Frann</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Kode</span>
           </button>
 
           {/* Desktop Navigation */}

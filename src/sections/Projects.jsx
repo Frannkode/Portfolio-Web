@@ -9,7 +9,7 @@ export function Projects() {
       description: "Plataforma completa para gestión de menús de hamburguesería con integración de WhatsApp. Permite a los clientes hacer pedidos directamente desde el menú digital, con personalización completa del diseño y gestión de inventario en tiempo real.",
       longDescription: "Desarrollé una solución integral para restaurantes que combina un menú digital atractivo con un sistema de pedidos vía WhatsApp. La plataforma incluye gestión de productos, categorías, personalización de colores y logos, y estadísticas de ventas. Los clientes pueden ver el menú, personalizar sus pedidos y enviarlos directamente al restaurante.",
       technologies: ["React", "JavaScript", "Tailwind CSS", "WhatsApp API", "Firebase"],
-      image: "",
+      image: "https://raw.githubusercontent.com/Frannkode/Portfolio-Web/refs/heads/main/src/assets/viciosburgerr.png",
       liveUrl: "https://reactvicios.vercel.app",
       githubUrl: "https://github.com/frannkode/ReactVicios",
       featured: true

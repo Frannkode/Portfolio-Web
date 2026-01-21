@@ -11,7 +11,7 @@ export function Footer() {
             {/* Brand */}
             <div className="text-center md:text-left">
               <h3 className="text-2xl font-bold mb-4">
-                <span className="text-white">Fran</span>
+                <span className="text-white">Frann</span>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">kode</span>
               </h3>
               <p className="text-slate-400 text-sm leading-relaxed">
@@ -88,7 +88,7 @@ export function Footer() {
           <div className="pt-8 border-t border-slate-800">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-slate-400 text-sm mb-4 md:mb-0">
-                © {currentYear} Franco. Todos los derechos reservados.
+                © {currentYear} Franco Miguel Ponce. Todos los derechos reservados.
               </p>
               <p className="text-slate-500 text-sm flex items-center">
                 Hecho con <Heart className="w-4 h-4 mx-1 text-red-500" /> y React

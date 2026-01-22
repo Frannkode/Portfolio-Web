@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import { Menu, X, Moon, Sun, Monitor } from 'lucide-react'
 import { useTheme } from '../hooks/useTheme'
 
@@ -112,40 +113,48 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-slate-200 dark:border-slate-700">
-            <nav className="flex flex-col space-y-4">
-              <button
-                onClick={() => scrollToSection('hero')}
-                className="text-left text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300 font-medium py-2"
-              >
-                Inicio
-              </button>
-              <button
-                onClick={() => scrollToSection('about')}
-                className="text-left text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300 font-medium py-2"
-              >
-                Sobre mí
-              </button>
-              <button
-                onClick={() => scrollToSection('skills')}
-                className="text-left text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300 font-medium py-2"
-              >
-                Tecnologías
-              </button>
-              <button
-                onClick={() => scrollToSection('projects')}
-                className="text-left text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300 font-medium py-2"
-              >
-                Proyectos
-              </button>
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="text-left text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300 font-medium py-2"
-              >
-                Contacto
-              </button>
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="md:hidden absolute top-full left-0 right-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-700 shadow-xl"
+          >
+            <nav className="container mx-auto px-4 py-6">
+              <div className="flex flex-col space-y-1">
+                <button
+                  onClick={() => scrollToSection('hero')}
+                  className="text-left text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300 font-medium py-3 px-4 rounded-lg"
+                >
+                  Inicio
+                </button>
+                <button
+                  onClick={() => scrollToSection('about')}
+                  className="text-left text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300 font-medium py-3 px-4 rounded-lg"
+                >
+                  Sobre mí
+                </button>
+                <button
+                  onClick={() => scrollToSection('skills')}
+                  className="text-left text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300 font-medium py-3 px-4 rounded-lg"
+                >
+                  Tecnologías
+                </button>
+                <button
+                  onClick={() => scrollToSection('projects')}
+                  className="text-left text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300 font-medium py-3 px-4 rounded-lg"
+                >
+                  Proyectos
+                </button>
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className="text-left text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300 font-medium py-3 px-4 rounded-lg"
+                >
+                  Contacto
+                </button>
+              </div>
             </nav>
-          </div>
+          </motion.div>
         )}
       </div>
     </header>

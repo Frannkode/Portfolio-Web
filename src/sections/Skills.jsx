@@ -1,22 +1,25 @@
 import { motion } from 'framer-motion'
 import { Code, Sparkles } from 'lucide-react'
-import {
-  SiHtml5,
-  SiCss3,
-  SiJavascript,
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiNodedotjs,
-  SiGit,
-  SiFigma,
-  SiVercel,
-  SiVite
-} from 'react-icons/si'
+import { memo, useMemo, useCallback, lazy, Suspense } from 'react'
+import { IconContext } from 'react-icons'
 
-export function Skills() {
-  const skillCategories = [
+// Lazy load icons for better performance
+const SiHtml5 = lazy(() => import('react-icons/si').then(module => ({ default: module.SiHtml5 })))
+const SiCss3 = lazy(() => import('react-icons/si').then(module => ({ default: module.SiCss3 })))
+const SiJavascript = lazy(() => import('react-icons/si').then(module => ({ default: module.SiJavascript })))
+const SiReact = lazy(() => import('react-icons/si').then(module => ({ default: module.SiReact })))
+const SiNextdotjs = lazy(() => import('react-icons/si').then(module => ({ default: module.SiNextdotjs })))
+const SiTypescript = lazy(() => import('react-icons/si').then(module => ({ default: module.SiTypescript })))
+const SiTailwindcss = lazy(() => import('react-icons/si').then(module => ({ default: module.SiTailwindcss })))
+const SiNodedotjs = lazy(() => import('react-icons/si').then(module => ({ default: module.SiNodedotjs })))
+const SiGit = lazy(() => import('react-icons/si').then(module => ({ default: module.SiGit })))
+const SiFigma = lazy(() => import('react-icons/si').then(module => ({ default: module.SiFigma })))
+const SiVercel = lazy(() => import('react-icons/si').then(module => ({ default: module.SiVercel })))
+const SiVite = lazy(() => import('react-icons/si').then(module => ({ default: module.SiVite })))
+
+function SkillsComponent() {
+  // Memoize skill categories to prevent recreation on every render
+  const skillCategories = useMemo(() => [
     {
       title: "Frontend Core",
       gradient: "from-orange-400 to-red-500",
@@ -47,9 +50,10 @@ export function Skills() {
         { name: "Vite", icon: SiVite, color: "text-yellow-400" }
       ]
     }
-  ]
+  ], [])
 
-  const containerVariants = {
+  // Memoize animation variants for better performance
+  const containerVariants = useMemo(() => ({
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -58,9 +62,9 @@ export function Skills() {
         delayChildren: 0
       }
     }
-  }
+  }), [])
 
-  const cardVariants = {
+  const cardVariants = useMemo(() => ({
     hidden: {
       opacity: 0,
       y: 20
@@ -73,9 +77,9 @@ export function Skills() {
         ease: "easeOut"
       }
     }
-  }
+  }), [])
 
-  const skillVariants = {
+  const skillVariants = useMemo(() => ({
     hidden: {
       opacity: 0
     },
@@ -86,7 +90,7 @@ export function Skills() {
         delay: 0.1
       }
     }
-  }
+  }), [])
 
   return (
     <section id="skills" className="relative py-24 overflow-hidden">
@@ -231,3 +235,5 @@ export function Skills() {
     </section>
   )
 }
+
+export const Skills = memo(SkillsComponent)

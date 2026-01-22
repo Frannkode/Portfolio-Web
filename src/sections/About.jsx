@@ -133,23 +133,6 @@ export function About() {
                     </p>
                   </div>
                 </div>
-
-                {/* Floating Elements */}
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                  className="absolute -top-4 -right-4 w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center shadow-lg"
-                >
-                  <Heart className="w-6 h-6 text-white" />
-                </motion.div>
-
-                <motion.div
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute -bottom-4 -left-4 w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center shadow-lg"
-                >
-                  <Code className="w-6 h-6 text-white" />
-                </motion.div>
               </div>
             </motion.div>
           </div>

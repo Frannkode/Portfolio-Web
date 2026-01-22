@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import { Mail, MapPin, Send, CheckCircle } from 'lucide-react'
 
 export function Contact() {
@@ -23,6 +24,11 @@ export function Contact() {
     setIsSubmitting(true)
 
     try {
+      console.log('Environment variables:')
+      console.log('SERVICE_ID:', import.meta.env.VITE_EMAILJS_SERVICE_ID)
+      console.log('TEMPLATE_ID:', import.meta.env.VITE_EMAILJS_TEMPLATE_ID)
+      console.log('PUBLIC_KEY:', import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
@@ -30,12 +36,16 @@ export function Contact() {
         to_name: 'Franco',
       }
 
-      await emailjs.send(
+      console.log('Sending email with params:', templateParams)
+
+      const result = await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         templateParams,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
+
+      console.log('Email sent successfully:', result)
 
       setIsSubmitted(true)
       setFormData({ name: '', email: '', message: '' })
@@ -44,6 +54,7 @@ export function Contact() {
       setTimeout(() => setIsSubmitted(false), 5000)
     } catch (error) {
       console.error('Error sending email:', error)
+      console.error('Error details:', error.message)
       alert('Error al enviar el mensaje. Por favor, intenta nuevamente.')
     } finally {
       setIsSubmitting(false)

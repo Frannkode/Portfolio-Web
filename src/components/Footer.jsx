@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail, Heart } from 'lucide-react'
 
 export function Footer() {
@@ -7,6 +8,20 @@ export function Footer() {
     <footer className="bg-slate-900 dark:bg-slate-950 text-white py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="flex justify-center mb-12"
+          >
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
+              <Heart className="w-4 h-4 text-red-400 animate-pulse" />
+              <span className="text-sm font-medium text-slate-300">Gracias por llegar hasta aquí</span>
+              <Heart className="w-4 h-4 text-red-400 animate-pulse" />
+            </div>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {/* Brand */}
             <div className="text-center md:text-left">

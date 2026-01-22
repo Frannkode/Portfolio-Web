@@ -43,6 +43,17 @@ export function About() {
           className="max-w-6xl mx-auto"
         >
           <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 dark:bg-slate-800/60 backdrop-blur-md border border-white/20 dark:border-slate-700/50 mb-6 shadow-lg"
+            >
+              <Users className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Conoce mi historia</span>
+            </motion.div>
+
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white">
               Sobre Mí
             </h2>

@@ -31,6 +31,17 @@ export function Hero() {
             </div>
           </motion.div>
 
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 dark:bg-slate-800/60 backdrop-blur-md border border-white/20 dark:border-slate-700/50 mb-8 shadow-lg"
+          >
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Disponible para proyectos</span>
+          </motion.div>
+
           {/* Main Content */}
           <motion.div
             initial={{ y: 30, opacity: 0 }}

@@ -18,7 +18,7 @@ export function Footer() {
           >
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
               <Heart className="w-4 h-4 text-red-400 animate-pulse" />
-              <span className="text-sm font-medium text-slate-300">Gracias por llegar hasta aquí</span>
+              <span className="text-sm font-medium text-slate-300">Gracias por llegar hasta aquí!</span>
               <Heart className="w-4 h-4 text-red-400 animate-pulse" />
             </div>
           </motion.div>

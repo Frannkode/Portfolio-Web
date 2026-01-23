@@ -26,7 +26,7 @@ export function Hero() {
           >
             <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 p-1">
               <div className="w-full h-full rounded-full bg-white dark:bg-slate-800 flex items-center justify-center">
-                <span className="text-4xl font-bold text-indigo-600 dark:text-indigo-400">FD</span>
+                <span className="text-4xl font-bold text-indigo-600 dark:text-indigo-400"></span>
               </div>
             </div>
           </motion.div>

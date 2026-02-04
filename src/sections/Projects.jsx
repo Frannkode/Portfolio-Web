@@ -17,7 +17,7 @@ export function Projects() {
       title: "El Cruce Restaurant",
       description: "Sitio web moderno y elegante para Restaurant El Cruce con menú de delivery, carta digital de comidas y bebidas, optimizado para móviles y dispositivos touch.",
       technologies: ["React", "Vite", "Tailwind CSS"],
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&h=300&fit=crop&crop=center",
+      image: "https://raw.githubusercontent.com/Frannkode/Portfolio-Web/refs/heads/main/src/assets/elcruce.png",
       liveUrl: "https://elcruce.vercel.app",
       githubUrl: "https://github.com/Frannkode/ElCruceRestaurant"
     }

@@ -101,10 +101,6 @@ function SkillsComponent() {
 
       <div className="container relative mx-auto px-4 z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
           className="max-w-7xl mx-auto"
         >
           {/* Header */}
@@ -126,10 +122,6 @@ function SkillsComponent() {
 
           {/* Skills Grid */}
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
             className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-20"
           >
             {skillCategories.map((category, categoryIndex) => (
@@ -179,28 +171,16 @@ function SkillsComponent() {
 
           {/* Additional Skills */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
             className="text-center"
           >
             <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 md:p-12 shadow-lg">
               <motion.h3
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: 0.2 }}
-                viewport={{ once: true }}
                 className="text-2xl md:text-3xl font-bold mb-6 text-slate-900 dark:text-white"
               >
                 También domino
               </motion.h3>
 
               <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: 0.3 }}
-                viewport={{ once: true }}
                 className="flex flex-wrap justify-center gap-3"
               >
                 {[
@@ -215,13 +195,6 @@ function SkillsComponent() {
                 ].map((skill, index) => (
                   <motion.span
                     key={skill}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{
-                      duration: 0.3,
-                      delay: index * 0.05
-                    }}
-                    viewport={{ once: true }}
                     className="px-4 py-2 bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 text-cyan-800 dark:text-cyan-300 rounded-full text-sm font-semibold border border-cyan-200/50 dark:border-cyan-700/30 shadow-sm"
                   >
                     {skill}

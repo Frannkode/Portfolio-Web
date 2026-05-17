@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
-import { Mail, Linkedin, Send, Sparkles, Cloud, ArrowRight } from 'lucide-react'
+import { Mail, Linkedin, Send, ArrowRight } from 'lucide-react'
 
 export function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
@@ -37,120 +37,114 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="py-32 bg-bg relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-accent-pink/30 rounded-full blur-[150px] -z-10" />
-      <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-accent-blue/20 rounded-full blur-[150px] -z-10" />
+    <section id="contact" className="py-24 bg-bg relative overflow-hidden">
+      {/* Background Grid */}
+      <div className="absolute inset-0 animate-grid opacity-10" />
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 md:gap-20 items-center max-w-6xl mx-auto">
 
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-pink rounded-full text-primary font-bold text-sm mb-8">
-              <Sparkles size={16} />
-              <span>Conectemos nuestras energías</span>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 mac-glass rounded-full text-text-primary text-sm mb-6 md:mb-8 border border-border">
+              <span className="w-2 h-2 rounded-full bg-primary" />
+              <span className="font-mono text-xs uppercase tracking-widest font-semibold">Iniciemos el proyecto</span>
             </div>
 
-            <h2 className="text-5xl md:text-7xl font-display font-black text-text-primary mb-8 leading-[0.9]">
-              ¿Iniciamos algo <span className="text-primary italic">mágico?</span>
+            <h2 className="text-4xl md:text-6xl font-display font-semibold text-text-primary mb-6 leading-tight">
+              Hablemos de <span className="text-gradient italic">resultados.</span>
             </h2>
 
-            <p className="text-xl text-text-secondary mb-12 font-light leading-relaxed max-w-lg">
-              Estoy listo para transformar tus visiones en realidades digitales celestiales.
-              Mándame un mensaje y elevemos tu proyecto al siguiente nivel.
+            <p className="text-lg md:text-xl text-text-secondary mb-10 font-light leading-relaxed max-w-lg">
+              Si estás listo para escalar tu negocio y dejar atrás los problemas técnicos, envíame un mensaje.
             </p>
 
-            <div className="space-y-6">
-              <a href="mailto:poncefrancomiguel@gmail.com" className="flex items-center gap-6 p-6 premium-glass rounded-[2rem] group hover:bg-primary/5 transition-all">
-                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
-                  <Mail className="text-primary" />
+            <div className="space-y-4 md:space-y-6">
+              <a href="mailto:poncefrancomiguel@gmail.com" className="flex items-center gap-4 md:gap-6 p-4 md:p-6 mac-glass rounded-[1.5rem] md:rounded-[2rem] group hover:border-primary/30 transition-all">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-white/[0.05] border border-border rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-bg group-hover:border-primary text-primary transition-all">
+                  <Mail size={20} />
                 </div>
                 <div>
-                  <div className="text-xs font-mono uppercase tracking-widest text-text-secondary">Escríbeme</div>
-                  <div className="text-lg font-bold text-text-primary">poncefrancomiguel@gmail.com</div>
+                  <div className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-text-secondary">Escríbeme</div>
+                  <div className="text-base md:text-lg font-semibold text-text-primary">poncefrancomiguel@gmail.com</div>
                 </div>
               </a>
 
-              <a href="https://linkedin.com/in/tecfrancoponce" target="_blank" className="flex items-center gap-6 p-6 premium-glass rounded-[2rem] group hover:bg-primary/5 transition-all">
-                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
-                  <Linkedin className="text-primary" />
+              <a href="https://linkedin.com/in/tecfrancoponce" target="_blank" className="flex items-center gap-4 md:gap-6 p-4 md:p-6 mac-glass rounded-[1.5rem] md:rounded-[2rem] group hover:border-primary/30 transition-all">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-white/[0.05] border border-border rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-bg group-hover:border-primary text-primary transition-all">
+                  <Linkedin size={20} />
                 </div>
                 <div>
-                  <div className="text-xs font-mono uppercase tracking-widest text-text-secondary">Linkedin</div>
-                  <div className="text-lg font-bold text-text-primary">Frannkode Pro</div>
+                  <div className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-text-secondary">Linkedin</div>
+                  <div className="text-base md:text-lg font-semibold text-text-primary">Franco Ponce</div>
                 </div>
               </a>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="premium-glass p-8 md:p-12 rounded-[3rem] celestial-glow shadow-2xl relative"
+            className="mac-glass-card p-6 md:p-10"
           >
-            <div className="absolute -top-10 -right-10 float opacity-50 hidden md:block">
-              <Cloud size={100} className="text-accent-blue" />
-            </div>
-
-            <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
-              <div className="grid md:grid-cols-2 gap-8">
+            <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div className="space-y-2">
-                  <label className="text-xs font-mono uppercase tracking-widest text-text-secondary ml-2">Tu Nombre</label>
+                  <label className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-text-secondary ml-1">Tu Nombre</label>
                   <input
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Cosmo Traveller"
-                    className="w-full bg-white/50 border border-border focus:border-primary px-6 py-4 rounded-2xl outline-none transition-all"
+                    placeholder="Ej. Juan Pérez"
+                    className="w-full bg-black/20 border border-border focus:border-primary px-4 md:px-6 py-3 md:py-4 rounded-xl text-text-primary outline-none transition-all placeholder:text-text-secondary/50"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-mono uppercase tracking-widest text-text-secondary ml-2">Tu Email</label>
+                  <label className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-text-secondary ml-1">Tu Email</label>
                   <input
                     type="email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="name@universo.com"
-                    className="w-full bg-white/50 border border-border focus:border-primary px-6 py-4 rounded-2xl outline-none transition-all"
+                    placeholder="juan@empresa.com"
+                    className="w-full bg-black/20 border border-border focus:border-primary px-4 md:px-6 py-3 md:py-4 rounded-xl text-text-primary outline-none transition-all placeholder:text-text-secondary/50"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-mono uppercase tracking-widest text-text-secondary ml-2">Tu Mensaje</label>
+                <label className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-text-secondary ml-1">Proyecto / Objetivo</label>
                 <textarea
                   required
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Cuéntame tu visión..."
-                  className="w-full bg-white/50 border border-border focus:border-primary px-6 py-4 rounded-3xl outline-none transition-all resize-none"
+                  placeholder="Cuéntame sobre el problema que quieres resolver..."
+                  className="w-full bg-black/20 border border-border focus:border-primary px-4 md:px-6 py-3 md:py-4 rounded-xl text-text-primary outline-none transition-all resize-none placeholder:text-text-secondary/50"
                 />
               </div>
 
               <motion.button
-                whileHover={{ scale: 1.02, x: 5 }}
+                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 disabled={status === 'sending'}
-                className={`w-full py-5 rounded-[2rem] font-bold text-xl flex items-center justify-center gap-3 transition-all ${status === 'success' ? 'bg-green-500 text-white' : 'bg-primary text-white shadow-xl shadow-primary/20 hover:shadow-primary/30'
+                className={`w-full py-4 rounded-xl font-bold text-base md:text-lg flex items-center justify-center gap-3 transition-all ${status === 'success' ? 'bg-green-500 text-bg' : 'bg-primary text-bg hover:bg-primary/90 shadow-[0_0_20px_rgba(255,255,255,0.1)]'
                   }`}
               >
-                {status === 'sending' ? 'Enviando Señal...' : status === 'success' ? '¡Señal Recibida! ✨' : (
+                {status === 'sending' ? 'Enviando...' : status === 'success' ? '¡Mensaje Recibido! ✓' : (
                   <>
-                    Enviar Mensaje <ArrowRight size={20} />
+                    Enviar Mensaje <ArrowRight size={18} />
                   </>
                 )}
               </motion.button>
 
               {status === 'error' && (
-                <p className="text-red-500 text-sm font-medium text-center">Fallo en la señal cósmica. Intenta de nuevo.</p>
+                <p className="text-red-500 text-sm font-medium text-center">Hubo un error. Por favor intenta de nuevo.</p>
               )}
             </form>
           </motion.div>

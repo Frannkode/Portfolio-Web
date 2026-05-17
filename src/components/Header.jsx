@@ -12,8 +12,8 @@ export function Header() {
 
   const navItems = [
     { name: 'Inicio', href: '#hero' },
-    { name: 'Proyectos', href: '#projects' },
-    { name: 'Arquitectura', href: '#engineering' },
+    { name: 'Soluciones', href: '#projects' },
+    { name: 'Ventaja', href: '#engineering' },
     { name: 'Contacto', href: '#contact' }
   ]
 
@@ -21,14 +21,14 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-4' : 'py-6'}`}
     >
-      <div className="container mx-auto px-6">
-        <nav className="flex items-center justify-between premium-glass rounded-full px-8 py-3 max-w-4xl mx-auto border-primary/10 bg-white/20 backdrop-blur-xl">
+      <div className="container mx-auto px-4 md:px-6">
+        <nav className="flex items-center justify-between mac-glass rounded-full px-6 md:px-8 py-3 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-xl font-bold font-display"
+            className="text-lg md:text-xl font-bold font-display tracking-tight text-text-primary"
           >
-            <span className="text-primary">F</span>RANNKODE
+            FRANN<span className="text-text-secondary font-light">KODE</span>
           </motion.div>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -53,10 +53,10 @@ export function Header() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden md:block bg-primary px-6 py-2 rounded-full text-sm font-bold text-white shadow-[0_10px_20px_rgba(167,139,250,0.2)]"
+            className="hidden md:block bg-primary px-6 py-2 rounded-full text-sm font-bold text-bg shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-shadow hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]"
             onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Hablemos
+            Agendar Llamada
           </motion.button>
         </nav>
       </div>

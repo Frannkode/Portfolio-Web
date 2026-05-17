@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { portfolioData } from '../data/portfolio'
-import { ExternalLink, Github, ArrowRight } from 'lucide-react'
+import { ExternalLink, Github } from 'lucide-react'
 
 export function Projects() {
   return (
@@ -34,10 +34,10 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.1 }}
-              className="group flex flex-col bg-[#080808] border border-border rounded-xl overflow-hidden transition-colors hover:border-white/[0.15]"
+              className="group flex flex-col bg-white/[0.03] backdrop-blur-md border border-white/[0.05] rounded-xl overflow-hidden transition-colors hover:border-white/[0.12] hover:bg-white/[0.04]"
             >
               {/* Image Container */}
-              <div className="relative h-36 overflow-hidden border-b border-border">
+              <div className="relative h-36 overflow-hidden border-b border-white/[0.05]">
                 <div className="absolute inset-0 bg-black/40 z-10 group-hover:bg-transparent transition-colors duration-500" />
                 <img
                   src={project.image}
@@ -77,7 +77,7 @@ export function Projects() {
                 </div>
 
                 {/* Metrics */}
-                <div className="grid grid-cols-2 gap-2 py-3 border-y border-border mb-4 bg-white/[0.01] -mx-5 px-5">
+                <div className="grid grid-cols-2 gap-2 py-3 border-y border-white/[0.05] mb-4 bg-white/[0.01] -mx-5 px-5">
                   {project.metrics.map((metric, idx) => (
                     <div key={idx}>
                       <div className="text-sm font-bold text-primary mb-0.5">
@@ -96,7 +96,7 @@ export function Projects() {
                     href={project.links.live}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex-1 flex items-center justify-center gap-1.5 py-2 bg-white/[0.05] hover:bg-white/[0.1] text-text-primary border border-border rounded-md text-[11px] font-semibold transition-colors"
+                    className="flex-1 flex items-center justify-center gap-1.5 py-2 bg-white/[0.05] hover:bg-white/[0.1] text-text-primary border border-white/[0.05] rounded-md text-[11px] font-semibold transition-colors"
                   >
                     Ver Proyecto <ExternalLink size={12} />
                   </a>
@@ -104,7 +104,7 @@ export function Projects() {
                     href={project.links.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-2 rounded-md border border-border text-text-secondary hover:text-text-primary hover:bg-white/[0.05] transition-colors"
+                    className="p-2 rounded-md border border-white/[0.05] text-text-secondary hover:text-text-primary hover:bg-white/[0.05] transition-colors"
                     aria-label="Ver código en GitHub"
                   >
                     <Github size={14} />

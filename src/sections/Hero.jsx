@@ -1,8 +1,30 @@
-import { motion } from 'framer-motion'
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { portfolioData } from '../data/portfolio'
+import { useEffect } from 'react'
 
 export function Hero() {
   const { name, role, tagline, cta } = portfolioData.hero
+
+  // Mouse Parallax Effect
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
+
+  const springConfig = { damping: 25, stiffness: 150, mass: 0.5 }
+  const smoothX = useSpring(mouseX, springConfig)
+  const smoothY = useSpring(mouseY, springConfig)
+
+  // Map mouse movement to translation (reverse direction for cool parallax)
+  const parallaxX = useTransform(smoothX, [0, typeof window !== 'undefined' ? window.innerWidth : 1000], [40, -40])
+  const parallaxY = useTransform(smoothY, [0, typeof window !== 'undefined' ? window.innerHeight : 800], [40, -40])
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      mouseX.set(e.clientX)
+      mouseY.set(e.clientY)
+    }
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [mouseX, mouseY])
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-bg">
@@ -11,6 +33,23 @@ export function Hero() {
       
       {/* Center Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] md:w-[40vw] md:h-[40vw] bg-white/[0.03] rounded-full blur-[100px] pointer-events-none" />
+
+      {/* Mouse Parallax Abstract Decoration */}
+      <motion.div
+        style={{ x: parallaxX, y: parallaxY }}
+        className="absolute right-[5%] md:right-[15%] top-[15%] md:top-[25%] pointer-events-none opacity-40 mix-blend-screen"
+      >
+        <div className="relative w-64 h-64 md:w-96 md:h-96">
+          <div className="absolute inset-0 border-[0.5px] border-white/20 rounded-full animate-[spin_20s_linear_infinite]" />
+          <div className="absolute inset-4 border-[0.5px] border-white/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+          <div className="absolute inset-12 border-[0.5px] border-white/5 rounded-full border-dashed animate-[spin_30s_linear_infinite]" />
+          
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 bg-white rounded-full shadow-[0_0_10px_white]" />
+          
+          <div className="absolute top-[20%] left-[10%] w-1.5 h-1.5 bg-primary rounded-full animate-pulse shadow-[0_0_10px_rgba(167,139,250,0.8)]" />
+          <div className="absolute bottom-[30%] right-[15%] w-1 h-1 bg-text-secondary rounded-full" />
+        </div>
+      </motion.div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">

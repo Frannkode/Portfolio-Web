@@ -34,20 +34,56 @@ export function Hero() {
       {/* Center Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] md:w-[40vw] md:h-[40vw] bg-white/[0.03] rounded-full blur-[100px] pointer-events-none" />
 
-      {/* Mouse Parallax Abstract Decoration */}
+      {/* Mouse Parallax Abstract Dashboard Decoration */}
       <motion.div
         style={{ x: parallaxX, y: parallaxY }}
-        className="absolute right-[5%] md:right-[15%] top-[15%] md:top-[25%] pointer-events-none opacity-40 mix-blend-screen"
+        className="absolute right-[5%] md:right-[15%] top-[20%] md:top-[25%] pointer-events-none opacity-80 mix-blend-screen hidden md:block"
       >
-        <div className="relative w-64 h-64 md:w-96 md:h-96">
-          <div className="absolute inset-0 border-[0.5px] border-white/20 rounded-full animate-[spin_20s_linear_infinite]" />
-          <div className="absolute inset-4 border-[0.5px] border-white/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
-          <div className="absolute inset-12 border-[0.5px] border-white/5 rounded-full border-dashed animate-[spin_30s_linear_infinite]" />
+        <div className="relative w-96 h-96">
+          {/* Floating Card 1 - Chart */}
+          <div className="absolute top-0 right-0 w-48 h-32 bg-white/[0.02] backdrop-blur-md border border-white/10 rounded-2xl p-4 flex flex-col gap-3 shadow-[0_20px_40px_rgba(0,0,0,0.5)] transform rotate-6">
+            <div className="flex justify-between items-center mb-1">
+              <div className="w-1/2 h-2 bg-white/20 rounded-full" />
+              <div className="w-2 h-2 bg-green-500 rounded-full" />
+            </div>
+            <div className="flex items-end gap-2 h-full pb-1">
+              {[40, 70, 50, 90, 60].map((h, i) => (
+                <div key={i} className="flex-1 bg-gradient-to-t from-primary/40 to-primary rounded-t-sm" style={{ height: `${h}%` }} />
+              ))}
+            </div>
+          </div>
+
+          {/* Floating Card 2 - Stats */}
+          <div className="absolute top-24 -left-12 w-40 h-40 bg-white/[0.02] backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-[0_20px_40px_rgba(0,0,0,0.5)] transform -rotate-12">
+            <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+              <div className="w-3 h-3 bg-primary rounded-full" />
+            </div>
+            <div className="w-3/4 h-3 bg-white/40 rounded-full mb-3" />
+            <div className="w-1/2 h-2 bg-white/10 rounded-full" />
+            <div className="absolute bottom-4 right-4 text-xs font-mono text-green-400 font-bold">+24%</div>
+          </div>
+
+          {/* Floating Card 3 - Code/Terminal */}
+          <div className="absolute bottom-4 right-10 w-56 h-28 bg-[#0a0a0a] border border-white/10 rounded-2xl p-4 shadow-[0_20px_40px_rgba(0,0,0,0.5)] transform rotate-3">
+            <div className="flex gap-1.5 mb-3">
+              <div className="w-2 h-2 rounded-full bg-red-500/80" />
+              <div className="w-2 h-2 rounded-full bg-yellow-500/80" />
+              <div className="w-2 h-2 rounded-full bg-green-500/80" />
+            </div>
+            <div className="space-y-2">
+              <div className="w-3/4 h-1.5 bg-primary/60 rounded-full" />
+              <div className="w-1/2 h-1.5 bg-white/30 rounded-full" />
+              <div className="w-5/6 h-1.5 bg-white/20 rounded-full" />
+            </div>
+          </div>
           
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 bg-white rounded-full shadow-[0_0_10px_white]" />
-          
-          <div className="absolute top-[20%] left-[10%] w-1.5 h-1.5 bg-primary rounded-full animate-pulse shadow-[0_0_10px_rgba(167,139,250,0.8)]" />
-          <div className="absolute bottom-[30%] right-[15%] w-1 h-1 bg-text-secondary rounded-full" />
+          {/* Connecting lines / nodes */}
+          <svg className="absolute inset-0 w-full h-full -z-10 opacity-30" viewBox="0 0 400 400">
+             <path d="M150,150 L250,80 L280,250 Z" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" className="text-primary/50" />
+             <circle cx="150" cy="150" r="4" fill="currentColor" className="text-white" />
+             <circle cx="250" cy="80" r="4" fill="currentColor" className="text-white" />
+             <circle cx="280" cy="250" r="4" fill="currentColor" className="text-white" />
+          </svg>
         </div>
       </motion.div>
 

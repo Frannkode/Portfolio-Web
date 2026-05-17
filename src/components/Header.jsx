@@ -22,7 +22,13 @@ export function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-4' : 'py-6'}`}
     >
       <div className="container mx-auto px-4 md:px-6">
-        <nav className="flex items-center justify-between mac-glass rounded-full px-6 md:px-8 py-3 max-w-4xl mx-auto">
+        <nav 
+          className={`flex items-center justify-between rounded-full px-6 md:px-8 py-3 max-w-4xl mx-auto transition-all duration-500 ${
+            isScrolled 
+              ? 'bg-[#050505] border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.8)]' 
+              : 'bg-white/[0.02] border border-white/5 backdrop-blur-md'
+          }`}
+        >
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}

@@ -7,13 +7,15 @@ const iconMap = {
 }
 
 export function Stack() {
+    const allTools = portfolioData.stack.flatMap((category) => category.tools)
+
     return (
         <section className="py-24 bg-bg relative overflow-hidden border-t border-border/50">
             {/* Background elements */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.02] rounded-full blur-[120px] pointer-events-none" />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
-                <div className="text-center mb-16 md:mb-20">
+                <div className="text-center mb-12">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -26,6 +28,21 @@ export function Stack() {
                             Selección precisa de herramientas empresariales. Sin modas pasajeras, solo tecnología comprobada que escala.
                         </p>
                     </motion.div>
+                </div>
+
+                {/* Infinite marquee ticker */}
+                <div className="relative mb-16 md:mb-20 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+                    <div className="flex w-max animate-marquee">
+                        {[...allTools, ...allTools].map((tool, i) => {
+                            const Icon = iconMap[tool.icon] || SiReact
+                            return (
+                                <div key={`${tool.name}-${i}`} className="flex items-center gap-3 px-8 shrink-0">
+                                    <Icon size={22} className="text-text-secondary" />
+                                    <span className="font-mono text-sm text-text-secondary whitespace-nowrap">{tool.name}</span>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
 
                 <div className="space-y-16 max-w-6xl mx-auto">

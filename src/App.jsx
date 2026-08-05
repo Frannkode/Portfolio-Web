@@ -23,6 +23,7 @@ function App() {
   return (
     <div className="min-h-screen bg-bg selection:bg-primary/30 selection:text-primary relative">
       <div className="spotlight" aria-hidden="true" />
+      <div className="grain-overlay" aria-hidden="true" />
       <Header />
       <CommandPalette />
       <main>

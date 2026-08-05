@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { portfolioData } from '../data/portfolio'
 import { ExternalLink, Github } from 'lucide-react'
+import { TiltCard } from '../components/TiltCard'
 
 const bentoSpan = (i) => {
   if (i === 0) return 'md:col-span-2 lg:col-span-2 lg:row-span-2'
@@ -42,7 +43,11 @@ export function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: i * 0.1 }}
-                className={`group flex flex-col bg-white/[0.03] backdrop-blur-md border border-white/[0.05] rounded-xl overflow-hidden transition-colors hover:border-white/[0.12] hover:bg-white/[0.04] ${bentoSpan(i)} ${isFeatured ? 'lg:flex-row' : ''}`}
+                className={bentoSpan(i)}
+              >
+              <TiltCard
+                tiltStrength={isFeatured ? 4 : 6}
+                className={`flex flex-col h-full bg-white/[0.03] backdrop-blur-md border border-white/[0.05] rounded-xl overflow-hidden transition-colors hover:border-white/[0.12] hover:bg-white/[0.04] ${isFeatured ? 'lg:flex-row' : ''}`}
               >
                 {/* Image Container */}
                 <div className={`relative overflow-hidden border-b border-white/[0.05] shrink-0 ${isFeatured ? 'h-48 lg:h-auto lg:w-1/2 lg:border-b-0 lg:border-r' : 'h-36'}`}>
@@ -124,6 +129,7 @@ export function Projects() {
                     </a>
                   </div>
                 </div>
+              </TiltCard>
               </motion.div>
             )
           })}

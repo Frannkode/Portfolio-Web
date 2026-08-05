@@ -1,7 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect, useMemo, useCallback } from 'react'
-import { Home, Layers, Zap, Mail, Github, Linkedin, Palette, Circle, CornerDownLeft } from 'lucide-react'
+import { Home, Layers, Zap, Mail, Github, Linkedin, Palette, Circle, CornerDownLeft, Boxes, UserRound, Sparkles } from 'lucide-react'
 import { useTheme } from '../hooks/useTheme'
+import { scrollToSection } from '../lib/scroll'
 
 export function CommandPalette() {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,15 +17,19 @@ export function CommandPalette() {
   }, [])
 
   const commands = useMemo(() => [
-    { id: 'hero', label: 'Ir a Inicio', icon: Home, action: () => document.querySelector('#hero')?.scrollIntoView({ behavior: 'smooth' }) },
-    { id: 'projects', label: 'Ir a Soluciones', icon: Layers, action: () => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' }) },
-    { id: 'engineering', label: 'Ir a Ventaja Competitiva', icon: Zap, action: () => document.querySelector('#engineering')?.scrollIntoView({ behavior: 'smooth' }) },
-    { id: 'contact', label: 'Ir a Contacto', icon: Mail, action: () => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }) },
+    { id: 'hero', label: 'Ir a Inicio', icon: Home, action: () => scrollToSection('#hero') },
+    { id: 'projects', label: 'Ir a Soluciones', icon: Layers, action: () => scrollToSection('#projects') },
+    { id: 'engineering', label: 'Ir a Ventaja Competitiva', icon: Zap, action: () => scrollToSection('#engineering') },
+    { id: 'stack', label: 'Ir a Stack', icon: Boxes, action: () => scrollToSection('#stack') },
+    { id: 'about', label: 'Ir a Sobre mí', icon: UserRound, action: () => scrollToSection('#about') },
+    { id: 'contact', label: 'Ir a Contacto', icon: Mail, action: () => scrollToSection('#contact') },
     { id: 'theme', label: theme === 'color' ? 'Cambiar a modo Mono' : 'Cambiar a modo Color', icon: theme === 'color' ? Circle : Palette, action: toggleTheme },
     { id: 'github', label: 'Abrir GitHub', icon: Github, action: () => window.open('https://github.com/frannkode', '_blank') },
     { id: 'linkedin', label: 'Abrir LinkedIn', icon: Linkedin, action: () => window.open('https://linkedin.com/in/tecfrancoponce', '_blank') },
     { id: 'email', label: 'Enviar Email', icon: Mail, action: () => window.open('mailto:poncefrancomiguel@gmail.com', '_blank') },
   ], [theme, toggleTheme])
+
+  const easterEgg = query.trim().toLowerCase() === 'whoami'
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
@@ -108,10 +113,16 @@ export function CommandPalette() {
             </div>
 
             <div className="max-h-80 overflow-y-auto py-2">
-              {filtered.length === 0 && (
+              {easterEgg ? (
+                <div className="px-5 py-6 flex items-start gap-3">
+                  <Sparkles size={18} className="text-primary shrink-0 mt-0.5" />
+                  <p className="text-sm text-text-secondary leading-relaxed">
+                    <span className="text-text-primary font-semibold">Franco Ponce</span> — construyo software que resuelve problemas de negocio reales. Si llegaste hasta acá escribiendo <code className="font-mono text-primary">whoami</code>, probablemente también vas a disfrutar trabajar conmigo. 👋
+                  </p>
+                </div>
+              ) : filtered.length === 0 ? (
                 <p className="px-5 py-6 text-sm text-text-secondary text-center">Sin resultados.</p>
-              )}
-              {filtered.map((cmd, i) => {
+              ) : filtered.map((cmd, i) => {
                 const Icon = cmd.icon
                 const active = i === activeIndex
                 return (

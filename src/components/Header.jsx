@@ -2,10 +2,21 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { Menu, X, Search } from 'lucide-react'
 import { ThemeToggle } from './ThemeToggle'
+import { scrollToSection } from '../lib/scroll'
+
+const navItems = [
+  { name: 'Inicio', href: '#hero' },
+  { name: 'Soluciones', href: '#projects' },
+  { name: 'Ventaja', href: '#engineering' },
+  { name: 'Stack', href: '#stack' },
+  { name: 'Sobre mí', href: '#about' },
+  { name: 'Contacto', href: '#contact' },
+]
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('hero')
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
@@ -13,15 +24,29 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navItems = [
-    { name: 'Inicio', href: '#hero' },
-    { name: 'Soluciones', href: '#projects' },
-    { name: 'Ventaja', href: '#engineering' },
-    { name: 'Contacto', href: '#contact' }
-  ]
+  useEffect(() => {
+    const sections = navItems
+      .map((item) => document.querySelector(item.href))
+      .filter(Boolean)
+
+    if (sections.length === 0) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+        if (visible) setActiveSection(visible.target.id)
+      },
+      { rootMargin: '-40% 0px -50% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] }
+    )
+
+    sections.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
 
   const scrollTo = (href) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+    scrollToSection(href)
     setIsMenuOpen(false)
   }
 
@@ -31,7 +56,7 @@ export function Header() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <nav
-          className={`flex items-center justify-between rounded-full px-4 md:px-8 py-3 max-w-4xl mx-auto transition-all duration-500 ${
+          className={`flex items-center justify-between rounded-full px-4 md:px-8 py-3 max-w-5xl mx-auto transition-all duration-500 ${
             isScrolled
               ? 'bg-bg-secondary border border-border shadow-[0_20px_40px_rgba(0,0,0,0.8)]'
               : 'bg-white/[0.02] border border-border backdrop-blur-md'
@@ -45,23 +70,28 @@ export function Header() {
             FRANN<span className="text-text-secondary font-light">KODE</span>
           </motion.div>
 
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, i) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="text-sm font-medium text-text-secondary hover:text-primary transition-colors"
-                onClick={(e) => {
-                  e.preventDefault()
-                  scrollTo(item.href)
-                }}
-              >
-                {item.name}
-              </motion.a>
-            ))}
+          <div className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.slice(1)
+              return (
+                <button
+                  key={item.name}
+                  onClick={() => scrollTo(item.href)}
+                  className={`relative px-3 py-1.5 text-sm font-medium transition-colors ${
+                    isActive ? 'text-primary' : 'text-text-secondary hover:text-primary'
+                  }`}
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-active-pill"
+                      className="absolute inset-0 rounded-full bg-accent-soft"
+                      transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{item.name}</span>
+                </button>
+              )
+            })}
           </div>
 
           <div className="flex items-center gap-2 md:gap-3">
@@ -102,7 +132,7 @@ export function Header() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ duration: 0.2 }}
-              className="md:hidden mt-3 max-w-4xl mx-auto mac-glass rounded-2xl p-4 flex flex-col gap-1"
+              className="md:hidden mt-3 max-w-5xl mx-auto mac-glass rounded-2xl p-4 flex flex-col gap-1"
             >
               {navItems.map((item) => (
                 <button

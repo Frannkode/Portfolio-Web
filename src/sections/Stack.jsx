@@ -10,7 +10,7 @@ export function Stack() {
     const allTools = portfolioData.stack.flatMap((category) => category.tools)
 
     return (
-        <section className="py-24 bg-bg relative overflow-hidden border-t border-border/50">
+        <section id="stack" className="py-24 bg-bg relative overflow-hidden border-t border-border/50">
             {/* Background elements */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.02] rounded-full blur-[120px] pointer-events-none" />
 
@@ -69,7 +69,7 @@ export function Stack() {
                                             whileInView={{ opacity: 1, y: 0 }}
                                             viewport={{ once: true }}
                                             transition={{ delay: i * 0.1, duration: 0.4 }}
-                                            className="group relative p-6 md:p-8 rounded-[1.5rem] mac-glass-card hover:border-primary/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.05)] transition-all duration-500 overflow-hidden"
+                                            className="group relative p-6 md:p-8 rounded-[1.5rem] mac-glass-card hover:border-primary/30 hover:shadow-[0_0_35px_var(--primary-glow)] transition-all duration-500 overflow-hidden min-h-[180px]"
                                         >
                                             {/* Giant Watermark Icon */}
                                             <div className="absolute -right-6 -top-6 text-white/[0.02] group-hover:text-white/[0.05] transition-colors duration-500 rotate-12 group-hover:rotate-0 group-hover:scale-110">
@@ -83,9 +83,15 @@ export function Stack() {
                                                 <h4 className="text-xl font-display font-semibold text-text-primary mb-2">
                                                     {tool.name}
                                                 </h4>
-                                                <p className="text-sm text-text-secondary leading-relaxed">
-                                                    {tool.usage}
-                                                </p>
+
+                                                <div className="relative overflow-hidden">
+                                                    <motion.p
+                                                        initial={false}
+                                                        className="text-sm text-text-secondary leading-relaxed opacity-70 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-400"
+                                                    >
+                                                        {tool.usage}
+                                                    </motion.p>
+                                                </div>
                                             </div>
                                         </motion.div>
                                     )

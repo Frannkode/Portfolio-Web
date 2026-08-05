@@ -1,7 +1,9 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { portfolioData } from '../data/portfolio'
 import { useEffect } from 'react'
+import { SiReact, SiTypescript, SiTailwindcss, SiNodedotjs } from 'react-icons/si'
 import { MagneticButton } from '../components/MagneticButton'
+import { scrollToSection } from '../lib/scroll'
 
 const headlineWords = ['Ingeniería', 'que', 'escala', 'ventas.']
 
@@ -9,6 +11,13 @@ const wordVariants = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0 },
 }
+
+const floatingIcons = [
+  { Icon: SiReact, top: '18%', left: '6%', delay: '0s' },
+  { Icon: SiTypescript, top: '62%', left: '10%', delay: '1.5s' },
+  { Icon: SiTailwindcss, top: '30%', left: '90%', delay: '0.8s' },
+  { Icon: SiNodedotjs, top: '70%', left: '88%', delay: '2.2s' },
+]
 
 export function Hero() {
   const { role, tagline, cta } = portfolioData.hero
@@ -24,6 +33,8 @@ export function Hero() {
   // Map mouse movement to translation (reverse direction for cool parallax)
   const parallaxX = useTransform(smoothX, [0, typeof window !== 'undefined' ? window.innerWidth : 1000], [40, -40])
   const parallaxY = useTransform(smoothY, [0, typeof window !== 'undefined' ? window.innerHeight : 800], [40, -40])
+  const auroraX = useTransform(smoothX, [0, typeof window !== 'undefined' ? window.innerWidth : 1000], [-15, 15])
+  const auroraY = useTransform(smoothY, [0, typeof window !== 'undefined' ? window.innerHeight : 800], [-15, 15])
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -36,11 +47,22 @@ export function Hero() {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-bg">
-      {/* Background Grid Animation */}
-      <div className="absolute inset-0 animate-grid opacity-30" />
+      {/* Aurora background */}
+      <motion.div style={{ x: auroraX, y: auroraY }} className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="aurora-blob-1 absolute top-[-10%] left-[10%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full bg-primary/[0.08] blur-[120px]" />
+        <div className="aurora-blob-2 absolute bottom-[-10%] right-[10%] w-[45vw] h-[45vw] max-w-[550px] max-h-[550px] rounded-full bg-success/[0.06] blur-[120px]" />
+      </motion.div>
 
-      {/* Center Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] md:w-[40vw] md:h-[40vw] bg-white/[0.03] rounded-full blur-[100px] pointer-events-none" />
+      {/* Floating tech icons */}
+      {floatingIcons.map(({ Icon, top, left, delay }, i) => (
+        <div
+          key={i}
+          className="float-icon absolute pointer-events-none text-text-secondary/20 hidden lg:block"
+          style={{ top, left, animationDelay: delay }}
+        >
+          <Icon size={28} />
+        </div>
+      ))}
 
       {/* Mouse Parallax Abstract Dashboard Decoration */}
       <motion.div
@@ -84,7 +106,7 @@ export function Hero() {
               <div className="w-5/6 h-1.5 bg-white/20 rounded-full" />
             </div>
           </div>
-          
+
           {/* Connecting lines / nodes */}
           <svg className="absolute inset-0 w-full h-full -z-10 opacity-30" viewBox="0 0 400 400">
              <path d="M150,150 L250,80 L280,250 Z" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" className="text-primary/50" />
@@ -101,9 +123,12 @@ export function Hero() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 mac-glass rounded-full border-border"
+            className="relative inline-flex items-center gap-2 mb-8 px-4 py-1.5 mac-glass rounded-full border-border"
           >
-            <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
+            <span className="relative flex items-center justify-center w-2 h-2">
+              <span className="status-ping absolute inset-0 rounded-full bg-success" />
+              <span className="relative w-2 h-2 rounded-full bg-success" />
+            </span>
             <span className="text-xs md:text-sm font-mono text-text-secondary uppercase tracking-widest font-semibold">
               Disponible para proyectos
             </span>
@@ -151,13 +176,13 @@ export function Hero() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <MagneticButton
-              onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => scrollToSection('#projects')}
               className="px-8 py-4 bg-primary text-on-primary rounded-xl font-semibold text-base md:text-lg shadow-[0_0_40px_var(--primary-glow)] hover:opacity-90 transition-opacity w-full sm:w-auto"
             >
               {cta.primary}
             </MagneticButton>
             <MagneticButton
-              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => scrollToSection('#contact')}
               className="px-8 py-4 border border-border text-text-primary rounded-xl font-semibold text-base md:text-lg mac-glass hover:bg-accent-soft transition-colors w-full sm:w-auto"
             >
               {cta.secondary}

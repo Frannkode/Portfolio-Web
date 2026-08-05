@@ -47,11 +47,12 @@ export function Projects() {
               >
               <TiltCard
                 tiltStrength={isFeatured ? 4 : 6}
-                className={`flex flex-col h-full bg-white/[0.03] backdrop-blur-md border border-white/[0.05] rounded-xl overflow-hidden transition-colors hover:border-white/[0.12] hover:bg-white/[0.04] ${isFeatured ? 'lg:flex-row' : ''}`}
+                className={`flex flex-col h-full bg-white/[0.03] backdrop-blur-md border border-white/[0.05] rounded-xl overflow-hidden transition-all duration-500 hover:border-white/[0.12] hover:bg-white/[0.04] hover:shadow-[0_0_40px_var(--primary-glow)] ${isFeatured ? 'lg:flex-row' : ''}`}
               >
                 {/* Image Container */}
                 <div className={`relative overflow-hidden border-b border-white/[0.05] shrink-0 ${isFeatured ? 'h-48 lg:h-auto lg:w-1/2 lg:border-b-0 lg:border-r' : 'h-36'}`}>
                   <div className="absolute inset-0 bg-black/40 z-10 group-hover:bg-transparent transition-colors duration-500" />
+                  <div className="absolute inset-0 z-10 bg-gradient-to-tr from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 -translate-x-full group-hover:translate-x-0 transition-all duration-700 pointer-events-none" />
                   <img
                     src={project.image}
                     alt={project.title}
@@ -66,7 +67,7 @@ export function Projects() {
 
                 {/* Content */}
                 <div className={`flex-1 flex flex-col ${isFeatured ? 'p-6 lg:p-8 lg:justify-center' : 'p-5'}`}>
-                  <div className="mb-4">
+                  <div className="mb-3">
                     <h3 className={`font-display font-semibold text-text-primary mb-1 ${isFeatured ? 'text-2xl lg:text-3xl' : 'text-lg'}`}>
                       {project.title}
                     </h3>
@@ -74,6 +75,19 @@ export function Projects() {
                       {project.subtitle}
                     </p>
                   </div>
+
+                  {project.tech && (
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {project.tech.map((t) => (
+                        <span
+                          key={t}
+                          className="text-[10px] font-mono text-text-secondary border border-border rounded-full px-2 py-0.5 bg-white/[0.02]"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  )}
 
                   <div className={`space-y-3 mb-6 flex-1 ${isFeatured ? 'lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0' : ''}`}>
                     <div>

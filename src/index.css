@@ -156,11 +156,65 @@ h6 {
   animation: bg-pan 60s linear infinite;
 }
 
+/* Aurora background blobs (Hero) */
+@keyframes aurora-drift-1 {
+  0%, 100% { transform: translate(-8%, -6%) scale(1); }
+  50% { transform: translate(8%, 4%) scale(1.15); }
+}
+
+@keyframes aurora-drift-2 {
+  0%, 100% { transform: translate(6%, 8%) scale(1.1); }
+  50% { transform: translate(-8%, -4%) scale(0.95); }
+}
+
+.aurora-blob-1 {
+  animation: aurora-drift-1 20s ease-in-out infinite;
+}
+
+.aurora-blob-2 {
+  animation: aurora-drift-2 24s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob-1,
+  .aurora-blob-2,
+  .status-ping,
+  .float-icon {
+    animation: none !important;
+  }
+}
+
+/* Availability badge ping ring */
+@keyframes ping-ring {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.status-ping {
+  animation: ping-ring 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Floating tech icon chips */
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+.float-icon {
+  animation: float-bob 6s ease-in-out infinite;
+}
+
 .text-gradient {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(180deg, var(--gradient-from) 0%, var(--gradient-to) 100%);
+}
+
+.custom-cursor-active,
+.custom-cursor-active a,
+.custom-cursor-active button {
+  cursor: none;
 }
 
 .grain-overlay {

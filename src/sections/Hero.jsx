@@ -1,9 +1,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { portfolioData } from '../data/portfolio'
-import { useEffect, Suspense, lazy } from 'react'
+import { useEffect } from 'react'
 import { MagneticButton } from '../components/MagneticButton'
-
-const HeroScene = lazy(() => import('../components/HeroScene').then((m) => ({ default: m.HeroScene })))
 
 const headlineWords = ['Ingeniería', 'que', 'escala', 'ventas.']
 
@@ -43,13 +41,6 @@ export function Hero() {
 
       {/* Center Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] md:w-[40vw] md:h-[40vw] bg-white/[0.03] rounded-full blur-[100px] pointer-events-none" />
-
-      {/* Ambient 3D Core */}
-      <div className="absolute right-[-10%] md:right-[-2%] top-1/2 -translate-y-1/2 w-[85vw] md:w-[650px] h-[85vw] md:h-[650px] pointer-events-none mix-blend-screen opacity-60 hidden md:block">
-        <Suspense fallback={null}>
-          <HeroScene />
-        </Suspense>
-      </div>
 
       {/* Mouse Parallax Abstract Dashboard Decoration */}
       <motion.div

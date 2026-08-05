@@ -142,16 +142,6 @@ h6 {
   animation-play-state: paused;
 }
 
-/* Rotating conic-gradient border glow (wrapper must be relative + overflow-hidden + p-px) */
-@keyframes spin-border {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.spin-border-bg {
-  animation: spin-border 4s linear infinite;
-}
-
 /* Subtle Grid Background Animation */
 @keyframes bg-pan {
   0% { background-position: 0% 0%; }

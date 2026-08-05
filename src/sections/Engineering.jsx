@@ -34,23 +34,17 @@ export function Engineering() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                className="relative rounded-[2rem] p-px overflow-hidden group transition-transform duration-500 hover:-translate-y-1"
+                                className="mac-glass p-8 md:p-10 rounded-[2rem] group hover:border-primary/20 transition-all duration-500 hover:-translate-y-1"
                             >
-                                <div
-                                    className="spin-border-bg absolute -inset-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                                    style={{ background: 'conic-gradient(from 0deg, transparent 0%, var(--accent) 12%, transparent 28%)' }}
-                                />
-                                <div className="relative mac-glass p-8 md:p-10 rounded-[2rem] h-full">
-                                    <div className="w-14 h-14 bg-white/[0.05] border border-border rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-primary group-hover:text-on-primary transition-all duration-500 text-primary shadow-lg">
-                                        <Icon size={24} />
-                                    </div>
-                                    <h3 className="text-xl md:text-2xl font-display font-semibold text-text-primary mb-3 md:mb-4">
-                                        {item.title}
-                                    </h3>
-                                    <p className="text-text-secondary text-base md:text-lg leading-relaxed">
-                                        {item.description}
-                                    </p>
+                                <div className="w-14 h-14 bg-white/[0.05] border border-border rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-primary group-hover:text-on-primary transition-all duration-500 text-primary shadow-lg">
+                                    <Icon size={24} />
                                 </div>
+                                <h3 className="text-xl md:text-2xl font-display font-semibold text-text-primary mb-3 md:mb-4">
+                                    {item.title}
+                                </h3>
+                                <p className="text-text-secondary text-base md:text-lg leading-relaxed">
+                                    {item.description}
+                                </p>
                             </motion.div>
                         )
                     })}

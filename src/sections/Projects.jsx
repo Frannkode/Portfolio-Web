@@ -68,7 +68,7 @@ export function Projects() {
                   </div>
                   <div>
                     <h4 className="text-[10px] font-bold text-text-secondary uppercase tracking-wider mb-1 flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full bg-green-500/80"></span> Solución
+                      <span className="w-1 h-1 rounded-full bg-success/80"></span> Solución
                     </h4>
                     <p className="text-xs text-text-primary/80 leading-relaxed">
                       {project.solution}

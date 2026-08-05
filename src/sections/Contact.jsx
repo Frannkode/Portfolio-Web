@@ -64,7 +64,7 @@ export function Contact() {
 
             <div className="space-y-4 md:space-y-6">
               <a href="mailto:poncefrancomiguel@gmail.com" className="flex items-center gap-4 md:gap-6 p-4 md:p-6 mac-glass rounded-[1.5rem] md:rounded-[2rem] group hover:border-primary/30 transition-all">
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-white/[0.05] border border-border rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-bg group-hover:border-primary text-primary transition-all">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-white/[0.05] border border-border rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary group-hover:border-primary text-primary transition-all">
                   <Mail size={20} />
                 </div>
                 <div>
@@ -74,7 +74,7 @@ export function Contact() {
               </a>
 
               <a href="https://linkedin.com/in/tecfrancoponce" target="_blank" className="flex items-center gap-4 md:gap-6 p-4 md:p-6 mac-glass rounded-[1.5rem] md:rounded-[2rem] group hover:border-primary/30 transition-all">
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-white/[0.05] border border-border rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-bg group-hover:border-primary text-primary transition-all">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-white/[0.05] border border-border rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary group-hover:border-primary text-primary transition-all">
                   <Linkedin size={20} />
                 </div>
                 <div>
@@ -133,7 +133,7 @@ export function Contact() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 disabled={status === 'sending'}
-                className={`w-full py-4 rounded-xl font-bold text-base md:text-lg flex items-center justify-center gap-3 transition-all ${status === 'success' ? 'bg-green-500 text-bg' : 'bg-primary text-bg hover:bg-primary/90 shadow-[0_0_20px_rgba(255,255,255,0.1)]'
+                className={`w-full py-4 rounded-xl font-bold text-base md:text-lg flex items-center justify-center gap-3 transition-all ${status === 'success' ? 'bg-success text-on-primary' : 'bg-primary text-on-primary hover:bg-primary/90 shadow-[0_0_20px_var(--primary-glow)]'
                   }`}
               >
                 {status === 'sending' ? 'Enviando...' : status === 'success' ? '¡Mensaje Recibido! ✓' : (

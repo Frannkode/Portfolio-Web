@@ -3,31 +3,18 @@ import { createContext, useContext, useEffect, useState } from 'react'
 const ThemeContext = createContext()
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('system')
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('theme')
+    return saved === 'mono' || saved === 'color' ? saved : 'mono'
+  })
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'system'
-    setTheme(savedTheme)
-  }, [])
-
-  useEffect(() => {
-    const root = window.document.documentElement
-
-    if (theme === 'dark') {
-      root.classList.add('dark')
-    } else if (theme === 'light') {
-      root.classList.remove('dark')
-    } else {
-      // system preference
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-      root.classList.toggle('dark', systemTheme === 'dark')
-    }
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
   }, [theme])
 
   const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : theme === 'light' ? 'system' : 'dark'
-    setTheme(newTheme)
-    localStorage.setItem('theme', newTheme)
+    setTheme((prev) => (prev === 'mono' ? 'color' : 'mono'))
   }
 
   return (

@@ -1,27 +1,21 @@
-import { Moon, Sun, Monitor } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { Palette, Circle } from 'lucide-react'
 import { useTheme } from '../hooks/useTheme'
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme()
-
-  const getIcon = () => {
-    switch (theme) {
-      case 'dark':
-        return <Moon className="w-5 h-5" />
-      case 'light':
-        return <Sun className="w-5 h-5" />
-      default:
-        return <Monitor className="w-5 h-5" />
-    }
-  }
+  const isColor = theme === 'color'
 
   return (
-    <button
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
       onClick={toggleTheme}
-      className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-200"
-      aria-label="Cambiar tema"
+      aria-label={isColor ? 'Cambiar a modo mono' : 'Cambiar a modo color'}
+      title={isColor ? 'Modo Mono' : 'Modo Color'}
+      className="p-2.5 rounded-full border border-border text-text-secondary hover:text-primary bg-white/[0.02] hover:bg-accent-soft transition-colors"
     >
-      {getIcon()}
-    </button>
+      {isColor ? <Palette size={16} /> : <Circle size={16} />}
+    </motion.button>
   )
 }

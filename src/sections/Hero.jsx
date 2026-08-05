@@ -44,7 +44,7 @@ export function Hero() {
           <div className="absolute top-0 right-0 w-48 h-32 bg-white/[0.02] backdrop-blur-md border border-white/10 rounded-2xl p-4 flex flex-col gap-3 shadow-[0_20px_40px_rgba(0,0,0,0.5)] transform rotate-6">
             <div className="flex justify-between items-center mb-1">
               <div className="w-1/2 h-2 bg-white/20 rounded-full" />
-              <div className="w-2 h-2 bg-green-500 rounded-full" />
+              <div className="w-2 h-2 bg-success rounded-full" />
             </div>
             <div className="flex items-end gap-2 h-full pb-1">
               {[40, 70, 50, 90, 60].map((h, i) => (
@@ -60,7 +60,7 @@ export function Hero() {
             </div>
             <div className="w-3/4 h-3 bg-white/40 rounded-full mb-3" />
             <div className="w-1/2 h-2 bg-white/10 rounded-full" />
-            <div className="absolute bottom-4 right-4 text-xs font-mono text-green-400 font-bold">+24%</div>
+            <div className="absolute bottom-4 right-4 text-xs font-mono text-success font-bold">+24%</div>
           </div>
 
           {/* Floating Card 3 - Code/Terminal */}
@@ -95,7 +95,7 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 mac-glass rounded-full border-border"
           >
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
             <span className="text-xs md:text-sm font-mono text-text-secondary uppercase tracking-widest font-semibold">
               Disponible para proyectos
             </span>
@@ -131,18 +131,18 @@ export function Hero() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <motion.button
-              whileHover={{ scale: 1.02, backgroundColor: 'rgba(255,255,255,0.9)' }}
+              whileHover={{ scale: 1.02, opacity: 0.9 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 bg-primary text-bg rounded-xl font-semibold text-base md:text-lg shadow-[0_0_40px_rgba(255,255,255,0.1)] transition-all w-full sm:w-auto"
+              className="px-8 py-4 bg-primary text-on-primary rounded-xl font-semibold text-base md:text-lg shadow-[0_0_40px_var(--primary-glow)] transition-all w-full sm:w-auto"
             >
               {cta.primary}
             </motion.button>
             <motion.button
-              whileHover={{ scale: 1.02, backgroundColor: 'rgba(255,255,255,0.05)' }}
+              whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 border border-border text-text-primary rounded-xl font-semibold text-base md:text-lg mac-glass transition-all w-full sm:w-auto"
+              className="px-8 py-4 border border-border text-text-primary rounded-xl font-semibold text-base md:text-lg mac-glass hover:bg-accent-soft transition-all w-full sm:w-auto"
             >
               {cta.secondary}
             </motion.button>

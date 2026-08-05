@@ -60,7 +60,7 @@ export function Stack() {
                                             </div>
 
                                             <div className="relative z-10 flex flex-col h-full">
-                                                <div className="w-12 h-12 rounded-xl bg-white/[0.05] border border-border flex items-center justify-center text-text-primary mb-6 group-hover:bg-primary group-hover:text-bg group-hover:border-primary transition-all duration-300">
+                                                <div className="w-12 h-12 rounded-xl bg-white/[0.05] border border-border flex items-center justify-center text-text-primary mb-6 group-hover:bg-primary group-hover:text-on-primary group-hover:border-primary transition-all duration-300">
                                                     <Icon size={24} />
                                                 </div>
                                                 <h4 className="text-xl font-display font-semibold text-text-primary mb-2">

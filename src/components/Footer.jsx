@@ -36,8 +36,8 @@ export function Footer() {
                     key={i}
                     href={social.href}
                     target="_blank"
-                    whileHover={{ y: -3, backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
-                    className="p-3 md:p-4 rounded-xl text-text-secondary hover:text-primary border border-border transition-all bg-white/[0.02]"
+                    whileHover={{ y: -3 }}
+                    className="p-3 md:p-4 rounded-xl text-text-secondary hover:text-primary border border-border transition-all bg-white/[0.02] hover:bg-accent-soft"
                   >
                     <social.icon size={20} />
                   </motion.a>

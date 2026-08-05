@@ -1,9 +1,17 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { portfolioData } from '../data/portfolio'
 import { useEffect } from 'react'
+import { MagneticButton } from '../components/MagneticButton'
+
+const headlineWords = ['Ingeniería', 'que', 'escala', 'ventas.']
+
+const wordVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
+}
 
 export function Hero() {
-  const { name, role, tagline, cta } = portfolioData.hero
+  const { role, tagline, cta } = portfolioData.hero
 
   // Mouse Parallax Effect
   const mouseX = useMotionValue(0)
@@ -102,13 +110,25 @@ export function Hero() {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
+            initial="hidden"
+            animate="visible"
+            transition={{ staggerChildren: 0.08, delayChildren: 0.1 }}
             className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 md:mb-8 leading-[1.1] tracking-tight text-text-primary"
           >
-            Ingeniería que <br className="hidden md:block" />
-            <span className="text-gradient italic font-light">escala ventas.</span>
+            {headlineWords.map((word, i) => (
+              <span key={word}>
+                <span className="inline-block overflow-hidden mr-4">
+                  <motion.span
+                    variants={wordVariants}
+                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    className={`inline-block ${i >= 2 ? 'text-gradient italic font-light' : ''}`}
+                  >
+                    {word}
+                  </motion.span>
+                </span>
+                {i === 1 && <br className="hidden md:block" />}
+              </span>
+            ))}
           </motion.h1>
 
           <motion.div
@@ -130,22 +150,18 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <motion.button
-              whileHover={{ scale: 1.02, opacity: 0.9 }}
-              whileTap={{ scale: 0.98 }}
+            <MagneticButton
               onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 bg-primary text-on-primary rounded-xl font-semibold text-base md:text-lg shadow-[0_0_40px_var(--primary-glow)] transition-all w-full sm:w-auto"
+              className="px-8 py-4 bg-primary text-on-primary rounded-xl font-semibold text-base md:text-lg shadow-[0_0_40px_var(--primary-glow)] hover:opacity-90 transition-opacity w-full sm:w-auto"
             >
               {cta.primary}
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+            </MagneticButton>
+            <MagneticButton
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 border border-border text-text-primary rounded-xl font-semibold text-base md:text-lg mac-glass hover:bg-accent-soft transition-all w-full sm:w-auto"
+              className="px-8 py-4 border border-border text-text-primary rounded-xl font-semibold text-base md:text-lg mac-glass hover:bg-accent-soft transition-colors w-full sm:w-auto"
             >
               {cta.secondary}
-            </motion.button>
+            </MagneticButton>
           </motion.div>
         </div>
       </div>

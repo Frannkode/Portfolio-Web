@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://frannkode.vercel.app/sitemap.xml

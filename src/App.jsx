@@ -1,52 +1,57 @@
 import { useEffect } from 'react'
 import { Header } from './components/Header'
-import { CommandPalette } from './components/CommandPalette'
-import { ScrollProgress } from './components/ScrollProgress'
-import { CustomCursor } from './components/CustomCursor'
-import { Loader } from './components/Loader'
+import { Footer } from './components/Footer'
 import { useLenis } from './hooks/useLenis'
 import { Hero } from './sections/Hero'
-import { Metrics } from './sections/Metrics'
-import { Engineering } from './sections/Engineering'
+import { Statement } from './sections/Statement'
+import { Pillars } from './sections/Pillars'
+import { Services } from './sections/Services'
 import { Projects } from './sections/Projects'
-import { Stack } from './sections/Stack'
-import { About } from './sections/About'
+import { Erp } from './sections/Erp'
+import { Process } from './sections/Process'
 import { Contact } from './sections/Contact'
-import { Footer } from './components/Footer'
 
 function App() {
   useLenis()
 
   useEffect(() => {
-    const root = document.documentElement
-    const handleMouseMove = (e) => {
-      root.style.setProperty('--mouse-x', `${e.clientX}px`)
-      root.style.setProperty('--mouse-y', `${e.clientY}px`)
+    // Entrada suave, una vez, cuando cada parte aparece en pantalla.
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) }
+      }),
+      { threshold: 0.1 },
+    )
+    document.querySelectorAll('[data-reveal]').forEach((n) => io.observe(n))
+
+    // Brillo tenue que sigue al cursor dentro de los paneles.
+    const move = (e) => {
+      const p = e.target.closest?.('.panel--spot')
+      if (!p) return
+      const r = p.getBoundingClientRect()
+      p.style.setProperty('--mx', `${e.clientX - r.left}px`)
+      p.style.setProperty('--my', `${e.clientY - r.top}px`)
     }
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
+    window.addEventListener('mousemove', move, { passive: true })
+    return () => { io.disconnect(); window.removeEventListener('mousemove', move) }
   }, [])
 
   return (
-    <div className="min-h-screen bg-bg selection:bg-primary/30 selection:text-primary relative">
-      <Loader />
-      <CustomCursor />
-      <div className="spotlight" aria-hidden="true" />
-      <div className="grain-overlay" aria-hidden="true" />
-      <ScrollProgress />
+    <>
+      <a className="skip" href="#contenido">Saltar al contenido</a>
       <Header />
-      <CommandPalette />
-      <main>
+      <main id="contenido">
         <Hero />
-        <Metrics />
-        <Engineering />
+        <Statement />
+        <Pillars />
+        <Services />
         <Projects />
-        <Stack />
-        <About />
+        <Erp />
+        <Process />
         <Contact />
       </main>
       <Footer />
-    </div>
+    </>
   )
 }
 

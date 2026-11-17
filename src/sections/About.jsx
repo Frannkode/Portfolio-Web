@@ -6,7 +6,7 @@ export function About() {
         <div>
           <h2 data-reveal>Hablás directo<br />conmigo</h2>
           <p data-reveal style={{ '--i': 1 }}>
-            Soy Franco, desarrollador de Reconquista. Diseño, programo y publico cada proyecto, y respondo al momento. Cuando el sistema es grande, armo un equipo de desarrollo para entregarlo bien.
+            Soy Franco, desarrollador de Reconquista. Diseño, programo y publico cada proyecto. Cuando el sistema es grande, armo un equipo de desarrollo para entregarlo bien.
           </p>
         </div>
       </div>

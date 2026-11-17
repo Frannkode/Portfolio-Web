@@ -1,18 +1,19 @@
 // Contenido tomado del README de GitHub (github.com/Frannkode/Frannkode).
+const WA = 'https://wa.me/5493482232529'
+
 export const contact = {
-  whatsapp:
-    'https://wa.me/5493482232529?text=Hola%20Franco%2C%20vi%20tu%20portfolio%20y%20quiero%20consultarte%20por%20un%20proyecto',
+  whatsapp: `${WA}?text=Hola%20Franco%2C%20vi%20tu%20portfolio%20y%20quiero%20consultarte%20por%20un%20proyecto`,
   email: 'poncefrancomiguel@gmail.com',
   github: 'https://github.com/frannkode',
   linkedin: 'https://linkedin.com/in/tecfrancoponce',
 }
 
-export const whatsappBase = 'https://wa.me/5493482232529?text='
+export const whatsappBase = `${WA}?text=`
 
 // Valores de referencia en pesos argentinos; se confirman según el alcance.
 export const plans = [
   {
-    id: 'landing', name: 'Landing', price: '$80.000', from: false,
+    id: 'landing', name: 'Landing', price: '$80.000', from: true,
     text: 'Una página clara para que te encuentren y te escriban.',
     items: ['Tus servicios y tu zona en una sola página', 'Botón directo a WhatsApp', 'Se ve bien en el celular', 'Publicada en internet'],
   },
@@ -63,7 +64,7 @@ export const projects = [
     title: 'ViciosBurger',
     subtitle: 'Pedidos online para una hamburguesería',
     text: 'Pensado para el celular, con versión web instalable y app React Native. Canal propio por WhatsApp, sin intermediarios ni comisiones.',
-    result: 'Digitalización total del local: los pedidos entran ordenados y dejó de contestar consulta por consulta.',
+    result: 'Los pedidos entran ordenados y dejó de contestar consulta por consulta.',
     tech: ['React', 'React Native', 'Node.js'],
     phones: [
       { src: '/assets/img/projects/vicios-menu.webp', alt: 'Menú de ViciosBurger en el celular' },
@@ -100,7 +101,7 @@ export const projects = [
     title: 'El Cruce',
     subtitle: 'Carta digital para un restaurante',
     text: 'Una carta QR que el cliente abre desde la mesa y pedidos centralizados en una tablet, en lugar de cartas en papel y teléfonos colapsados.',
-    result: 'El restaurante dejó de tener problemas para mostrar su carta.',
+    result: 'Los clientes ya no tienen problemas para ver la carta.',
     tech: ['React', 'Tailwind CSS', 'Vercel'],
     image: '/assets/img/projects/elcruce.webp',
     links: { live: 'https://elcruce.vercel.app', github: 'https://github.com/Frannkode/ElCruceRestaurant' },

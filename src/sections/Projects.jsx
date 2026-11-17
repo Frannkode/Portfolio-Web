@@ -26,7 +26,7 @@ export function Projects() {
             <h3>{featured.title}</h3>
             <p className="fp__sub">{featured.subtitle}</p>
             <p className="fp__body">{featured.text}</p>
-            {featured.result && <p className="result"><b>Resultado</b> {featured.result}</p>}
+            {featured.result && <p className="result"><b>Lo que cambió</b> {featured.result}</p>}
             <ul className="tags">{featured.tech.map((t) => <li className="tag" key={t}>{t}</li>)}</ul>
             <div className="fp__links">
               <a className="btn btn--invert" href={featured.links.live} target="_blank" rel="noreferrer">Ver en vivo <ArrowUpRight size={14} aria-hidden="true" /></a>
@@ -60,7 +60,7 @@ export function Projects() {
                   <p className="pc__sub">{p.subtitle}</p>
                 </div>
                 <p className="pc__text">{p.text}</p>
-                {p.result && <p className="result"><b>Resultado</b> {p.result}</p>}
+                {p.result && <p className="result"><b>Lo que cambió</b> {p.result}</p>}
                 <div className="pc__foot">
                   <ul className="tags">{p.tech.slice(0, 3).map((t) => <li className="tag" key={t}>{t}</li>)}</ul>
                   <span className="pc__links">

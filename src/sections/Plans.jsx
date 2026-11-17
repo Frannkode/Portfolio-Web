@@ -8,7 +8,7 @@ export function Plans() {
         <div className="feature__head">
           <h2 data-reveal>Planes<br />y precios</h2>
           <div className="feature__desc" data-reveal style={{ '--i': 1 }}>
-            <p>Valores de referencia en pesos argentinos. El precio final se confirma según el alcance y te respondo al momento.</p>
+            <p>Valores de referencia en pesos argentinos. El precio final se confirma según el alcance.</p>
           </div>
         </div>
         <div className="plans">

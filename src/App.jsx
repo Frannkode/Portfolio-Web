@@ -50,8 +50,8 @@ function App() {
         <Pillars />
         <Services />
         <Projects />
-        <Erp />
         <Plans />
+        <Erp />
         <Process />
         <About />
         <Contact />

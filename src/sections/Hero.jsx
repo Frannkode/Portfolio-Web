@@ -43,6 +43,7 @@ export function Hero() {
 
         <div className="stage" data-fx>
           <div className="app" role="group" aria-label="Vista previa: elegí un servicio en la barra lateral">
+            <p className="sr" aria-live="polite">{o.title}</p>
             <div className="app__side">
               <div className="app__ws"><i /> Frannkode</div>
               {side.map((s) => {
@@ -66,7 +67,7 @@ export function Hero() {
                 </button>
               ))}
             </div>
-            <div className="app__main" key={o.id} aria-live="polite">
+            <div className="app__main" key={o.id}>
               <div className="app__top"><span className="st st--live" aria-hidden="true" /> {o.code} · {o.title}</div>
               <div className="app__body fade">
                 <p className="app__h">{o.title}</p>

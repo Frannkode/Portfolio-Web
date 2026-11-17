@@ -20,7 +20,8 @@ export function Contact() {
       )
       setStatus('success')
       setForm({ name: '', email: '', message: '' })
-    } catch {
+    } catch (err) {
+      if (import.meta.env.DEV) console.error('Email error:', err)
       setStatus('error')
     }
   }

@@ -13,8 +13,8 @@ const side = [
 ]
 
 const etapas = [
-  ['st--done', 'Definimos qué necesitás', 'alcance claro y sin tecnicismos'],
-  ['st--done', 'Entrega por etapas', 'ves avances reales'],
+  ['st--live', 'Definimos qué necesitás', 'alcance claro y sin tecnicismos'],
+  ['st--live', 'Entrega por etapas', 'ves avances reales'],
   ['st--live', 'Lanzamiento y soporte', 'te acompaño después de publicar'],
 ]
 
@@ -26,24 +26,24 @@ export function Hero() {
   return (
     <section id="inicio" className="hero">
       <div className="wrap">
-        <h1>Webs, tiendas y sistemas a medida para tu negocio</h1>
+        <h1>Vendé online y ordená tu negocio, sin depender de terceros</h1>
         <div className="hero__row">
           <p className="hero__sub">
-            Soy Franco, desarrollador Full Stack de Reconquista, Santa Fe. Hago tiendas online, sistemas de gestión y pedidos para comercios, restaurantes y empresas.
+            Soy Franco, desarrollador web en Reconquista, Santa Fe. Armo tiendas online, sistemas de gestión y pedidos por WhatsApp para comercios y restaurantes. Hablás directo conmigo, de la idea a la publicación.
           </p>
           <p className="hero__new">
-            <b>Nuevo</b>
-            <a href="#erp" onClick={(e) => go(e, '#erp')}>ERP industrial →</a>
+            <b>Experiencia en equipo</b>
+            <a href="#erp" onClick={(e) => go(e, '#erp')}>ERP industrial (QA) →</a>
           </p>
         </div>
         <div className="hero__cta">
-          <a className="btn btn--invert btn--lg" href={contact.whatsapp} target="_blank" rel="noreferrer">Hablemos por WhatsApp</a>
+          <a className="btn btn--invert btn--lg" href={contact.whatsapp} target="_blank" rel="noreferrer">Escribime por WhatsApp<span className="sr"> (abre en una pestaña nueva)</span></a>
           <a className="btn btn--lg" href="#proyectos" onClick={(e) => go(e, '#proyectos')}>Ver proyectos</a>
         </div>
 
         <div className="stage" data-fx>
-          <div className="app" aria-label="Vista previa interactiva: elegí un servicio en la barra lateral">
-            <aside className="app__side">
+          <div className="app" role="group" aria-label="Vista previa: elegí un servicio en la barra lateral">
+            <div className="app__side">
               <div className="app__ws"><i /> Frannkode</div>
               {side.map((s) => {
                 const Icon = s.icon
@@ -65,13 +65,13 @@ export function Hero() {
                   <span className="st st--live" aria-hidden="true" /> {x.name}
                 </button>
               ))}
-            </aside>
-            <div className="app__main" key={o.id}>
+            </div>
+            <div className="app__main" key={o.id} aria-live="polite">
               <div className="app__top"><span className="st st--live" aria-hidden="true" /> {o.code} · {o.title}</div>
               <div className="app__body fade">
                 <p className="app__h">{o.title}</p>
                 <p>{o.text}</p>
-                <p className="app__h app__h--sm">Etapas</p>
+                <p className="app__h app__h--sm">Cómo trabajo</p>
                 <ul className="feed">
                   {etapas.map(([st, t, d]) => (
                     <li key={t}><span className={`st ${st}`} aria-hidden="true" /> <span><b>{t}</b> · {d}</span></li>
@@ -79,13 +79,13 @@ export function Hero() {
                 </ul>
               </div>
             </div>
-            <aside className="app__props fade" key={`p-${o.id}`}>
+            <div className="app__props fade" key={`p-${o.id}`}>
               <span className="k">Estado</span><p><span className="st st--live" aria-hidden="true" /> {o.status}</p>
               <span className="k">Frontend</span><p>{o.stack.join(', ')}</p>
               <span className="k">Backend</span><p>{o.back}</p>
               <span className="k">Datos</span><p>{o.data}</p>
               <span className="k">Responsable</span><p>Franco · Reconquista, Santa Fe</p>
-            </aside>
+            </div>
           </div>
         </div>
       </div>

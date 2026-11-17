@@ -1,28 +1,16 @@
-# Portfolio Supremo 2026 — Reconstruction
+# Frannkode, portfolio
 
-## 🚀 Vision
-Este portfolio no es solo una landing page; es una **herramienta de posicionamiento estratégico**. Diseñado para transmitir no solo qué código escribo, sino cómo pienso como ingeniero y el valor real que aporto al negocio mediante arquitectura y automatización.
+Portfolio de Franco Ponce, desarrollador Full Stack en Reconquista, Santa Fe.
 
-## 🛠️ Stack Tecnológico
-- **Core:** React 19 + Vite
-- **Styling:** Tailwind CSS 4 (Custom Design System)
-- **Animations:** Framer Motion (Micro-interactions & Mesh Gradients)
-- **Icons:** Lucide React
-- **Architecture:** Centralized Data Layer + Functional Component Composition
+- **Stack:** React 19, Vite 7, CSS propio, Lenis (scroll suave), EmailJS (formulario de contacto).
+- **Contenido:** todo el texto y los proyectos están en `src/data/portfolio.js`.
+- **Efectos de scroll:** `src/hooks/useScrollFx.js` (respeta "reducir movimiento").
+- **Formulario:** requiere `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID` y `VITE_EMAILJS_PUBLIC_KEY` en `.env.local`.
+- **Guía gratis:** `public/metodo.html` (página estática con el PDF en `public/assets/`).
 
-## 📐 Filosofía de Diseño
-- **Premium Tech Aesthetic:** Uso de glassmorphism avanzado, fondos dinámicos (Mesh Gradients) y tipografía de alta gama (Space Grotesk + Inter).
-- **Impact-First Narrative:** Enfoque en métricas, toma de decisiones técnicas y trade-offs en lugar de simples listas de skills.
-
-## 📂 Estructura de Datos
-Para actualizar el contenido del portfolio, solo necesitas modificar `src/data/portfolio.js`. Esto desacopla el contenido de la estructura visual.
-
-## 🚀 Despliegue
-1. `npm install`
-2. `npm run dev`
-3. Deploy recomendado en **Vercel** o **Netlify** para soporte nativo de Vite.
-
-## 🤝 Filosofía de Código
-- **Modularidad:** Cada componente tiene una única responsabilidad.
-- **Performance:** Optimización de animaciones para mantener Lighthouse en 90+.
-- **Escalabilidad:** Diseñado para crecer con nuevos casos de estudio sin aumentar la deuda técnica.
+```bash
+npm install
+npm run dev      # desarrollo
+npm run build    # producción en dist/
+npm run lint
+```

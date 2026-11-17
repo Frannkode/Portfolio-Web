@@ -12,10 +12,10 @@ export function Projects() {
     <section id="proyectos" className="feature">
       <div className="wrap">
         <div className="feature__head">
-          <h2 data-reveal>Tiendas y sistemas<br />en producción</h2>
+          <h2 data-reveal>Tiendas y sistemas<br />a medida</h2>
           <div className="feature__desc" data-reveal style={{ '--i': 1 }}>
-            <p>Proyectos reales, publicados y funcionando. Cada uno resuelve un problema concreto de un negocio.</p>
-            <a className="more" href="https://github.com/Frannkode" target="_blank" rel="noreferrer">Ver el código en GitHub →</a>
+            <p>Cada proyecto resuelve un problema concreto de un negocio. Podés ver la demo en vivo y el código, cuando está disponible.</p>
+            <a className="more" href="https://github.com/Frannkode" target="_blank" rel="noreferrer">Ver el código en GitHub<span aria-hidden="true"> →</span><span className="sr"> (abre en una pestaña nueva)</span></a>
           </div>
         </div>
 
@@ -29,8 +29,8 @@ export function Projects() {
             <ul className="tags">{featured.tech.map((t) => <li className="tag" key={t}>{t}</li>)}</ul>
             <div className="fp__links">
               <a className="btn btn--invert" href={featured.links.live} target="_blank" rel="noreferrer">Ver en vivo <ArrowUpRight size={14} aria-hidden="true" /></a>
-              <a className="btn" href={featured.links.github} target="_blank" rel="noreferrer"><Github size={14} aria-hidden="true" /> Web</a>
-              <a className="btn" href={featured.links.app} target="_blank" rel="noreferrer"><Github size={14} aria-hidden="true" /> App</a>
+              <a className="btn" href={featured.links.github} target="_blank" rel="noreferrer"><Github size={14} aria-hidden="true" /> Código web</a>
+              <a className="btn" href={featured.links.app} target="_blank" rel="noreferrer"><Github size={14} aria-hidden="true" /> Código app</a>
             </div>
           </div>
           <div className="fp__phones" data-fx>
@@ -50,8 +50,8 @@ export function Projects() {
                 <span className="dots" aria-hidden="true"><i /><i /><i /></span>
                 <span className="pc__url">{host(p.links.live, 'github.com/Frannkode')}</span>
               </div>
-              <a className="pc__shot" href={p.links.live || p.links.github} target="_blank" rel="noreferrer" aria-label={`Abrir ${p.title}`}>
-                <img src={p.image} alt={`Captura de ${p.title}`} width="1600" height="1000" loading="lazy" />
+              <a className="pc__shot" href={p.links.live || p.links.github} target="_blank" rel="noreferrer" tabIndex={-1} aria-hidden="true">
+                <img src={p.image} alt="" width="1600" height="1000" loading="lazy" />
               </a>
               <div className="pc__body">
                 <div>
@@ -62,8 +62,8 @@ export function Projects() {
                 <div className="pc__foot">
                   <ul className="tags">{p.tech.slice(0, 3).map((t) => <li className="tag" key={t}>{t}</li>)}</ul>
                   <span className="pc__links">
-                    {p.links.live && <a className="more" href={p.links.live} target="_blank" rel="noreferrer">Ver sitio ↗</a>}
-                    <a className="more" href={p.links.github} target="_blank" rel="noreferrer">Código ↗</a>
+                    {p.links.live && <a className="more" href={p.links.live} target="_blank" rel="noreferrer">Ver sitio<span aria-hidden="true"> ↗</span><span className="sr"> de {p.title} (abre en una pestaña nueva)</span></a>}
+                    <a className="more" href={p.links.github} target="_blank" rel="noreferrer">Código<span aria-hidden="true"> ↗</span><span className="sr"> de {p.title} en GitHub (abre en una pestaña nueva)</span></a>
                   </span>
                 </div>
               </div>

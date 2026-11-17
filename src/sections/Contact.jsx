@@ -5,7 +5,7 @@ import { contact } from '../data/portfolio'
 export function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [status, setStatus] = useState('idle')
-  const set = (k) => (e) => setForm({ ...form, [k]: e.target.value })
+  const set = (k) => (e) => { const v = e.target.value; setForm((f) => ({ ...f, [k]: v })) }
 
   const submit = async (e) => {
     e.preventDefault()
@@ -20,8 +20,7 @@ export function Contact() {
       )
       setStatus('success')
       setForm({ name: '', email: '', message: '' })
-    } catch (err) {
-      console.error('Email error:', err)
+    } catch {
       setStatus('error')
     }
   }
@@ -30,22 +29,23 @@ export function Contact() {
     <section id="contacto" className="close">
       <div className="wrap close__grid">
         <div className="close__side">
-          <h2 data-reveal>¿Tenés un proyecto en mente?</h2>
-          <p data-reveal style={{ '--i': 1 }}>Contame qué necesitás y te respondo con una propuesta.</p>
-          <a className="btn btn--invert btn--lg" href={contact.whatsapp} target="_blank" rel="noreferrer" data-reveal style={{ '--i': 2 }}>Hablemos por WhatsApp</a>
+          <h2 data-reveal>¿Qué querés resolver en tu negocio?</h2>
+          <p data-reveal style={{ '--i': 1 }}>Contame en dos líneas qué vendés y qué te hace perder tiempo hoy. Te respondo con una propuesta.</p>
+          <a className="btn btn--invert btn--lg" href={contact.whatsapp} target="_blank" rel="noreferrer" data-reveal style={{ '--i': 2 }}>Escribime por WhatsApp<span className="sr"> (abre en una pestaña nueva)</span></a>
           <div className="links" data-reveal style={{ '--i': 3 }}>
             <a href={`mailto:${contact.email}`}><Mail size={15} aria-hidden="true" /> {contact.email}</a>
-            <a href={contact.github} target="_blank" rel="noreferrer"><Github size={15} aria-hidden="true" /> GitHub</a>
-            <a href={contact.linkedin} target="_blank" rel="noreferrer"><Linkedin size={15} aria-hidden="true" /> LinkedIn</a>
+            <a href={contact.github} target="_blank" rel="noreferrer"><Github size={15} aria-hidden="true" /> GitHub<span className="sr"> (abre en una pestaña nueva)</span></a>
+            <a href={contact.linkedin} target="_blank" rel="noreferrer"><Linkedin size={15} aria-hidden="true" /> LinkedIn<span className="sr"> (abre en una pestaña nueva)</span></a>
           </div>
         </div>
         <form className="panel form" onSubmit={submit} data-reveal style={{ '--i': 1 }}>
-          <input required aria-label="Nombre" name="name" placeholder="Tu nombre…" value={form.name} onChange={set('name')} autoComplete="name" />
-          <input required type="email" aria-label="Email" name="email" inputMode="email" spellCheck={false} placeholder="tu@email.com…" value={form.email} onChange={set('email')} autoComplete="email" />
-          <textarea required aria-label="Mensaje" name="message" placeholder="Contame qué necesitás…" value={form.message} onChange={set('message')} />
-          <button className="btn btn--invert btn--lg" disabled={status === 'sending'}>{status === 'sending' ? 'Enviando…' : 'Pedir presupuesto'}</button>
+          <label className="field"><span>Nombre</span><input required name="name" value={form.name} onChange={set('name')} autoComplete="name" /></label>
+          <label className="field"><span>Email</span><input required type="email" name="email" inputMode="email" spellCheck={false} placeholder="tu@email.com" value={form.email} onChange={set('email')} autoComplete="email" /></label>
+          <label className="field"><span>Mensaje</span><textarea required name="message" value={form.message} onChange={set('message')} /></label>
+          <button type="submit" className="btn btn--invert btn--lg" disabled={status === 'sending'}>{status === 'sending' ? 'Enviando…' : 'Enviar consulta'}</button>
           <p className="form__status" role="status">
-            {status === 'success' && 'Mensaje enviado. Te respondo pronto.'}
+            {status === 'sending' && 'Enviando…'}
+            {status === 'success' && 'Consulta enviada. Te respondo pronto.'}
             {status === 'error' && 'No se pudo enviar. Escribime por WhatsApp o por mail.'}
           </p>
         </form>

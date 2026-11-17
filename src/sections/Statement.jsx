@@ -6,7 +6,7 @@ const tech = [
   [SiFirebase, 'Firebase'], [SiSupabase, 'Supabase'], [SiVercel, 'Vercel'],
 ]
 
-const lead = 'Del frontend a la base de datos.'
+const lead = 'De la idea a la web publicada.'
 const rest = 'Diseño, programo y publico cada pieza: tiendas, sistemas de gestión y pedidos para negocios que quieren vender más y trabajar mejor.'
 const words = `${lead} ${rest}`.split(' ')
 

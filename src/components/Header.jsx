@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { scrollToSection } from '../lib/scroll'
 import { Logo } from './Logo'
@@ -13,10 +13,11 @@ const links = [
 
 export function Header() {
   const [open, setOpen] = useState(false)
+  const burger = useRef(null)
 
   useEffect(() => {
     if (!open) return
-    const onKey = (e) => e.key === 'Escape' && setOpen(false)
+    const onKey = (e) => { if (e.key === 'Escape') { setOpen(false); burger.current?.focus() } }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [open])
@@ -42,7 +43,8 @@ export function Header() {
         <button
           type="button"
           className="burger"
-          aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+          ref={burger}
+          aria-label="Menú"
           aria-expanded={open}
           aria-controls="menu-movil"
           onClick={() => setOpen(!open)}
@@ -50,14 +52,14 @@ export function Header() {
           {open ? <X size={18} aria-hidden="true" /> : <Menu size={18} aria-hidden="true" />}
         </button>
       </div>
-      <div id="menu-movil" className={`mnav${open ? ' is-open' : ''}`} hidden={!open}>
+      <nav id="menu-movil" aria-label="Menú móvil" className={`mnav${open ? ' is-open' : ''}`} hidden={!open}>
         <div className="wrap">
           {[...links, { name: 'Contacto', href: '#contacto' }].map((l) => (
             <a key={l.href} href={l.href} onClick={(e) => go(e, l.href)}>{l.name}</a>
           ))}
-          <a className="btn btn--invert btn--lg" href={contact.whatsapp} target="_blank" rel="noreferrer">Hablemos por WhatsApp</a>
+          <a className="btn btn--invert btn--lg" href={contact.whatsapp} target="_blank" rel="noreferrer">Escribime por WhatsApp<span className="sr"> (abre en una pestaña nueva)</span></a>
         </div>
-      </div>
+      </nav>
     </header>
   )
 }

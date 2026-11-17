@@ -9,6 +9,8 @@ import { Pillars } from './sections/Pillars'
 import { Services } from './sections/Services'
 import { Projects } from './sections/Projects'
 import { Erp } from './sections/Erp'
+import { Plans } from './sections/Plans'
+import { About } from './sections/About'
 import { Process } from './sections/Process'
 import { Contact } from './sections/Contact'
 
@@ -49,7 +51,9 @@ function App() {
         <Services />
         <Projects />
         <Erp />
+        <Plans />
         <Process />
+        <About />
         <Contact />
       </main>
       <Footer />

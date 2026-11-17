@@ -8,6 +8,7 @@ const links = [
   { name: 'Servicios', href: '#servicios' },
   { name: 'Proyectos', href: '#proyectos' },
   { name: 'ERP', href: '#erp' },
+  { name: 'Precios', href: '#precios' },
   { name: 'Cómo trabajo', href: '#proceso' },
 ]
 

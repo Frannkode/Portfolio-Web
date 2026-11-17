@@ -16,6 +16,7 @@ export function Footer() {
               <li><a href="#servicios">Servicios</a></li>
               <li><a href="#proyectos">Proyectos</a></li>
               <li><a href="#erp">ERP industrial</a></li>
+              <li><a href="#precios">Planes y precios</a></li>
               <li><a href="#proceso">Cómo trabajo</a></li>
               <li><a href="/metodo.html">Guía gratis: Método Web en 3 días</a></li>
             </ul>

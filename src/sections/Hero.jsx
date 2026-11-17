@@ -29,7 +29,7 @@ export function Hero() {
         <h1>Vendé online y ordená tu negocio, sin depender de terceros</h1>
         <div className="hero__row">
           <p className="hero__sub">
-            Soy Franco, desarrollador web en Reconquista, Santa Fe. Armo tiendas online, sistemas de gestión y pedidos por WhatsApp para comercios y restaurantes. Hablás directo conmigo, de la idea a la publicación.
+            Soy Franco, desarrollador web en Reconquista, Santa Fe. Armo tiendas online, sistemas de gestión y pedidos por WhatsApp para comercios y restaurantes. Hablás directo conmigo y te respondo al momento. Webs desde $80.000.
           </p>
           <p className="hero__new">
             <b>Experiencia en equipo</b>

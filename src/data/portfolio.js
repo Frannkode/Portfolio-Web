@@ -7,6 +7,27 @@ export const contact = {
   linkedin: 'https://linkedin.com/in/tecfrancoponce',
 }
 
+export const whatsappBase = 'https://wa.me/5493482232529?text='
+
+// Valores de referencia en pesos argentinos; se confirman según el alcance.
+export const plans = [
+  {
+    id: 'landing', name: 'Landing', price: '$80.000', from: false,
+    text: 'Una página clara para que te encuentren y te escriban.',
+    items: ['Tus servicios y tu zona en una sola página', 'Botón directo a WhatsApp', 'Se ve bien en el celular', 'Publicada en internet'],
+  },
+  {
+    id: 'web', name: 'Web o tienda', price: '$250.000', from: false, featured: true,
+    text: 'Una web más completa o una tienda para vender online.',
+    items: ['Varias secciones, o catálogo y carrito', 'Pedidos por WhatsApp', 'Diseño a medida de tu marca', 'Publicada y lista para usar'],
+  },
+  {
+    id: 'sistema', name: 'Software a medida', price: '$1.600.000', from: true,
+    text: 'Un sistema hecho para tu operación, con mi equipo.',
+    items: ['Punto de venta, stock y paneles', 'Usuarios y permisos', 'Armado con mi equipo de desarrollo', 'Alcance y plazos acordados antes de empezar'],
+  },
+]
+
 export const services = [
   { icon: 'ShoppingBag', title: 'Tiendas online', text: 'Desde cero o sobre Tiendanube, con personalizaciones como selectores de packs y SKUs dinámicos.' },
   { icon: 'LayoutDashboard', title: 'Sistemas de gestión', text: 'Punto de venta, control de stock y paneles con estadísticas, a medida de tu operación.' },
@@ -42,6 +63,7 @@ export const projects = [
     title: 'ViciosBurger',
     subtitle: 'Pedidos online para una hamburguesería',
     text: 'Pensado para el celular, con versión web instalable y app React Native. Canal propio por WhatsApp, sin intermediarios ni comisiones.',
+    result: 'Digitalización total del local: los pedidos entran ordenados y dejó de contestar consulta por consulta.',
     tech: ['React', 'React Native', 'Node.js'],
     phones: [
       { src: '/assets/img/projects/vicios-menu.webp', alt: 'Menú de ViciosBurger en el celular' },
@@ -78,6 +100,7 @@ export const projects = [
     title: 'El Cruce',
     subtitle: 'Carta digital para un restaurante',
     text: 'Una carta QR que el cliente abre desde la mesa y pedidos centralizados en una tablet, en lugar de cartas en papel y teléfonos colapsados.',
+    result: 'El restaurante dejó de tener problemas para mostrar su carta.',
     tech: ['React', 'Tailwind CSS', 'Vercel'],
     image: '/assets/img/projects/elcruce.webp',
     links: { live: 'https://elcruce.vercel.app', github: 'https://github.com/Frannkode/ElCruceRestaurant' },

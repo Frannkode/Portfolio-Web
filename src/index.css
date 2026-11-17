@@ -323,3 +323,23 @@ button { font: inherit; color: inherit; }
 .app__props .k { margin: 12px 0 4px; font-size: 0.75rem; font-weight: 400; color: var(--ink-4); display: block; }
 .app__props .k:first-child { margin-top: 0; }
 .pillar h2 { font-size: 0.9375rem; font-weight: 510; letter-spacing: 0; }
+
+/* Efectos de scroll: --p (0 a 1) lo pone useScrollFx; sin JS o con menos movimiento queda en 1 */
+.js [data-fx] { --p: 0; }
+
+/* El producto del hero se apoya: llega inclinado hacia atrás y se endereza al subir */
+.stage[data-fx] { transform-origin: 50% 0; transform: perspective(1700px) rotateX(calc((1 - var(--p, 1)) * 9deg)) translateY(calc((1 - var(--p, 1)) * 18px)); will-change: transform; }
+
+/* La frase central se enciende palabra por palabra */
+.statement .w { --k: clamp(0, calc((var(--p, 1) - var(--w)) * 7), 1); color: color-mix(in srgb, var(--ink) calc(var(--k) * 100%), #34373d); transition: color 120ms linear; }
+
+/* Los isométricos se dibujan línea por línea al entrar */
+.iso polygon { vector-effect: none; stroke-dasharray: 1; stroke-dashoffset: calc(1 - clamp(0, calc(var(--p, 1) * 1.7), 1)); }
+.iso { opacity: calc(0.25 + var(--p, 1) * 0.75); transform: translateY(calc((1 - var(--p, 1)) * 14px)); }
+.fig { font: 500 0.6875rem/1 var(--mono); color: var(--ink-4); letter-spacing: 0.04em; margin-bottom: 8px; }
+
+/* Los celulares se desplazan a distinta velocidad */
+.fp__phones[data-fx] .phone--0 { translate: 0 calc((0.5 - var(--p, 0.5)) * 46px); }
+.fp__phones[data-fx] .phone--1 { translate: 0 calc((0.5 - var(--p, 0.5)) * -26px); }
+.fp__phones[data-fx] .phone--2 { translate: 0 calc((0.5 - var(--p, 0.5)) * 64px); }
+@media (prefers-reduced-motion: reduce) { .statement .w { transition: none; } .stage[data-fx] { will-change: auto; } }

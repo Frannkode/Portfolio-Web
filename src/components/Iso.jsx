@@ -6,7 +6,7 @@ function Box({ cx, cy, a, h, dim = 1 }) {
   const top = `${cx},${cy - h - b} ${cx + a},${cy - h} ${cx},${cy - h + b} ${cx - a},${cy - h}`
   const left = `${cx - a},${cy - h} ${cx},${cy - h + b} ${cx},${cy + b} ${cx - a},${cy}`
   const right = `${cx + a},${cy - h} ${cx},${cy - h + b} ${cx},${cy + b} ${cx + a},${cy}`
-  const p = { fill: '#08090a', stroke: STROKE, strokeWidth: 1, strokeOpacity: dim, strokeLinejoin: 'round' }
+  const p = { fill: '#08090a', stroke: STROKE, strokeWidth: 1, strokeOpacity: dim, strokeLinejoin: 'round', pathLength: 1 }
   return (
     <g>
       <polygon points={left} {...p} />

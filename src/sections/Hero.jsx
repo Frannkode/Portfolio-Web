@@ -41,7 +41,7 @@ export function Hero() {
           <a className="btn btn--lg" href="#proyectos" onClick={(e) => go(e, '#proyectos')}>Ver proyectos</a>
         </div>
 
-        <div className="stage">
+        <div className="stage" data-fx>
           <div className="app" aria-label="Vista previa interactiva: elegí un servicio en la barra lateral">
             <aside className="app__side">
               <div className="app__ws"><i /> Frannkode</div>

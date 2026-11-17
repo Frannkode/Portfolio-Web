@@ -33,7 +33,7 @@ export function Projects() {
               <a className="btn" href={featured.links.app} target="_blank" rel="noreferrer"><Github size={14} aria-hidden="true" /> App</a>
             </div>
           </div>
-          <div className="fp__phones">
+          <div className="fp__phones" data-fx>
             {featured.phones.map((p, i) => (
               <figure className={`phone phone--${i}`} key={p.src}>
                 <img src={p.src} alt={p.alt} width="390" height="844" loading="lazy" />

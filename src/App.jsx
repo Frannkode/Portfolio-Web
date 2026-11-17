@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import { useLenis } from './hooks/useLenis'
+import { useScrollFx } from './hooks/useScrollFx'
 import { Hero } from './sections/Hero'
 import { Statement } from './sections/Statement'
 import { Pillars } from './sections/Pillars'
@@ -13,6 +14,7 @@ import { Contact } from './sections/Contact'
 
 function App() {
   useLenis()
+  useScrollFx()
 
   useEffect(() => {
     // Entrada suave, una vez, cuando cada parte aparece en pantalla.

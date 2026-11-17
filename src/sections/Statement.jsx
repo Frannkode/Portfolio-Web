@@ -6,13 +6,19 @@ const tech = [
   [SiFirebase, 'Firebase'], [SiSupabase, 'Supabase'], [SiVercel, 'Vercel'],
 ]
 
+const lead = 'Del frontend a la base de datos.'
+const rest = 'Diseño, programo y publico cada pieza: tiendas, sistemas de gestión y pedidos para negocios que quieren vender más y trabajar mejor.'
+const words = `${lead} ${rest}`.split(' ')
+
 export function Statement() {
   return (
     <>
       <section className="statement">
         <div className="wrap">
-          <p data-reveal>
-            <b>Del frontend a la base de datos.</b> Diseño, programo y publico cada pieza: tiendas, sistemas de gestión y pedidos para negocios que quieren vender más y trabajar mejor.
+          <p data-fx>
+            {words.map((w, i) => (
+              <span className="w" key={i} style={{ '--w': (i / words.length) * 0.8 }}>{w} </span>
+            ))}
           </p>
         </div>
       </section>

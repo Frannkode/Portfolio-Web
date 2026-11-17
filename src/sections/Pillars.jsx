@@ -12,7 +12,8 @@ export function Pillars() {
       {items.map((it, i) => {
         const Art = it.Art
         return (
-        <div className="pillar" key={it.title} data-reveal style={{ '--i': i }}>
+        <div className="pillar" key={it.title} data-fx>
+          <span className="fig">FIG 0.{i + 1}</span>
           <Art />
           <h2>{it.title}</h2>
           <p>{it.text}</p>

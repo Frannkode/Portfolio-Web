@@ -30,8 +30,8 @@ export function Contact() {
     <section id="contacto" className="close">
       <div className="wrap close__grid">
         <div className="close__side">
-          <h2 data-reveal>¿Qué querés resolver en tu negocio?</h2>
-          <p data-reveal style={{ '--i': 1 }}>Contame en dos líneas qué vendés y qué te hace perder tiempo hoy. Te respondo al momento con una propuesta.</p>
+          <h2 data-reveal>¿Qué querés ordenar en tu negocio?</h2>
+          <p data-reveal style={{ '--i': 1 }}>Contame en dos líneas cómo trabajás hoy (ventas, stock, pedidos) y qué te lleva más tiempo. Te respondo al momento por WhatsApp y te paso un precio de referencia.</p>
           <a className="btn btn--invert btn--lg" href={contact.whatsapp} target="_blank" rel="noreferrer" data-reveal style={{ '--i': 2 }}>Escribime por WhatsApp<span className="sr"> (abre en una pestaña nueva)</span></a>
           <div className="links" data-reveal style={{ '--i': 3 }}>
             <a href={`mailto:${contact.email}`}><Mail size={15} aria-hidden="true" /> {contact.email}</a>

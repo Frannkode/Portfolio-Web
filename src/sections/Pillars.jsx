@@ -1,9 +1,9 @@
 import { IsoLayers, IsoCubes, IsoBars } from '../components/Iso'
 
 const items = [
-  { Art: IsoLayers, title: 'De punta a punta', text: 'Frontend, backend, base de datos y publicación. Un solo desarrollador que entiende todas las capas.' },
-  { Art: IsoCubes, title: 'A medida', text: 'Sistemas hechos para tu operación, sin plantillas: punto de venta, stock, pedidos y paneles con estadísticas.' },
-  { Art: IsoBars, title: 'Rigor de equipo', text: 'Trabajé como QA y revisor técnico en un ERP industrial de más de un año de desarrollo. Ahí aprendí a detectar fallas antes de que lleguen al cliente, y lo aplico en cada proyecto.' },
+  { Art: IsoLayers, title: 'Hablás con quien programa', text: 'Quien te cotiza es quien escribe el código y te contesta por WhatsApp. Sin intermediarios ni cuentas asignadas.' },
+  { Art: IsoCubes, title: 'Precio claro desde el inicio', text: 'Planes de referencia a la vista: landing desde $80.000, web o tienda $250.000, software a medida desde $1.600.000. El precio final se confirma según el alcance, antes de empezar.' },
+  { Art: IsoBars, title: 'Canal propio, sin comisiones', text: 'Tus pedidos llegan directo a tu WhatsApp, sin plataformas en el medio que cobren un porcentaje por cada venta.' },
 ]
 
 export function Pillars() {

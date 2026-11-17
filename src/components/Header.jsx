@@ -6,9 +6,9 @@ import { contact } from '../data/portfolio'
 
 const links = [
   { name: 'Servicios', href: '#servicios' },
-  { name: 'Proyectos', href: '#proyectos' },
   { name: 'Precios', href: '#precios' },
-  { name: 'ERP', href: '#erp' },
+  { name: 'Proyectos', href: '#proyectos' },
+  { name: 'Experiencia', href: '#erp' },
   { name: 'Cómo trabajo', href: '#proceso' },
   { name: 'Quién soy', href: '#quien-soy' },
 ]

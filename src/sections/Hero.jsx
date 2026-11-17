@@ -13,9 +13,9 @@ const side = [
 ]
 
 const etapas = [
-  ['st--live', 'Definimos qué necesitás', 'alcance claro y sin tecnicismos'],
-  ['st--live', 'Entrega por etapas', 'ves avances reales'],
-  ['st--live', 'Lanzamiento y soporte', 'te acompaño después de publicar'],
+  ['st--live', 'Acordamos el alcance', 'qué incluye, a qué precio y qué queda afuera'],
+  ['st--live', 'Entrega por etapas', 'ves el sistema funcionando en cada una'],
+  ['st--live', 'Publicación y soporte', 'el soporte depende del plan'],
 ]
 
 export function Hero() {
@@ -26,10 +26,10 @@ export function Hero() {
   return (
     <section id="inicio" className="hero">
       <div className="wrap">
-        <h1>Vendé online y ordená tu negocio, sin depender de terceros</h1>
+        <h1>Punto de venta, stock y paneles a medida para tu pyme</h1>
         <div className="hero__row">
           <p className="hero__sub">
-            Soy Franco, desarrollador web en Reconquista, Santa Fe. Armo tiendas online, sistemas de gestión y pedidos por WhatsApp para comercios y restaurantes. Hablás directo conmigo y te respondo al momento. Webs desde $80.000.
+            Soy Franco, desarrollador en Reconquista, Santa Fe. Hablás directo con quien programa tu sistema y ves el precio de referencia desde el primer mensaje: software a medida desde $1.600.000. Los planes completos están más abajo.
           </p>
           <p className="hero__new">
             <b>Experiencia en equipo</b>
@@ -38,7 +38,7 @@ export function Hero() {
         </div>
         <div className="hero__cta">
           <a className="btn btn--invert btn--lg" href={contact.whatsapp} target="_blank" rel="noreferrer">Escribime por WhatsApp<span className="sr"> (abre en una pestaña nueva)</span></a>
-          <a className="btn btn--lg" href="#proyectos" onClick={(e) => go(e, '#proyectos')}>Ver proyectos</a>
+          <a className="btn btn--lg" href="#precios" onClick={(e) => go(e, '#precios')}>Ver planes y precios</a>
         </div>
 
         <div className="stage" data-fx>

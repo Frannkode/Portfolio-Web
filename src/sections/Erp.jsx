@@ -5,7 +5,7 @@ export function Erp() {
     <section id="erp" className="feature">
       <div className="wrap">
         <div className="feature__head">
-          <h2 data-reveal>ERP industrial<br />a medida</h2>
+          <h2 data-reveal>ERP industrial:<br />experiencia en equipo</h2>
           <div className="feature__desc" data-reveal style={{ '--i': 1 }}>
             <p>{erp.lead}</p>
             <p style={{ color: 'var(--ink-3)', fontSize: '0.9375rem' }}>{erp.role}</p>

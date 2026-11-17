@@ -8,9 +8,9 @@ export function Services() {
     <section id="servicios" className="feature">
       <div className="wrap">
         <div className="feature__head">
-          <h2 data-reveal>Qué hago<br />por tu negocio</h2>
+          <h2 data-reveal>Qué hago<br />por tu pyme</h2>
           <div className="feature__desc" data-reveal style={{ '--i': 1 }}>
-            <p>Desde una landing hasta un sistema de gestión completo, con un alcance claro desde el primer día.</p>
+            <p>Mi foco son los sistemas de gestión. Tienda, pedidos y web completan lo que tu negocio necesita para vender.</p>
           </div>
         </div>
         <div className="panel panel--spot" data-reveal>

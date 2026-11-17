@@ -49,8 +49,8 @@ function App() {
         <Statement />
         <Pillars />
         <Services />
-        <Projects />
         <Plans />
+        <Projects />
         <Erp />
         <Process />
         <About />

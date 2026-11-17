@@ -376,3 +376,5 @@ button { font: inherit; color: inherit; }
 .about__img { width: 160px; height: 160px; border-radius: 9999px; object-fit: cover; border: 1px solid var(--line-2); }
 .about p { color: var(--ink-2); font-size: 1.125rem; line-height: 1.5; max-width: 52ch; margin-top: 18px; }
 @media (max-width: 640px) { .about { grid-template-columns: 1fr; } .about__img { width: 112px; height: 112px; } }
+
+.plans__note { margin-top: 20px; color: var(--ink-3); font-size: 0.9375rem; max-width: 60ch; }

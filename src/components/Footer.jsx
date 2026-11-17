@@ -8,14 +8,14 @@ export function Footer() {
         <div className="footer__cols">
           <div>
             <a className="brand" href="#inicio"><Logo /> Frannkode</a>
-            <p style={{ marginTop: 14, maxWidth: '28ch' }}>Desarrollador Full Stack en Reconquista, Santa Fe.</p>
+            <p style={{ marginTop: 14, maxWidth: '28ch' }}>Sistemas de gestión, tiendas y webs a medida. Reconquista, Santa Fe.</p>
           </div>
           <div>
             <h2 className="footer__h">Secciones</h2>
             <ul>
               <li><a href="#servicios">Servicios</a></li>
-              <li><a href="#proyectos">Proyectos</a></li>
               <li><a href="#precios">Planes y precios</a></li>
+              <li><a href="#proyectos">Proyectos</a></li>
               <li><a href="#erp">ERP industrial</a></li>
               <li><a href="#proceso">Cómo trabajo</a></li>
               <li><a href="/metodo.html">Guía gratis: Método Web en 3 días</a></li>

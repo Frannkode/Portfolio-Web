@@ -14,32 +14,32 @@ export const whatsappBase = `${WA}?text=`
 export const plans = [
   {
     id: 'landing', name: 'Landing', price: '$80.000', from: true,
-    text: 'Una página clara para que te encuentren y te escriban.',
+    text: 'Una página clara con tus servicios y un botón para que te escriban.',
     items: ['Tus servicios y tu zona en una sola página', 'Botón directo a WhatsApp', 'Se ve bien en el celular', 'Publicada en internet'],
   },
   {
-    id: 'web', name: 'Web o tienda', price: '$250.000', from: false, featured: true,
+    id: 'web', name: 'Web o tienda', price: '$250.000', from: false,
     text: 'Una web más completa o una tienda para vender online.',
     items: ['Varias secciones, o catálogo y carrito', 'Pedidos por WhatsApp', 'Diseño a medida de tu marca', 'Publicada y lista para usar'],
   },
   {
-    id: 'sistema', name: 'Software a medida', price: '$1.600.000', from: true,
-    text: 'Un sistema hecho para tu operación, con mi equipo.',
-    items: ['Punto de venta, stock y paneles', 'Usuarios y permisos', 'Armado con mi equipo de desarrollo', 'Alcance y plazos acordados antes de empezar'],
+    id: 'sistema', name: 'Software a medida', price: '$1.600.000', from: true, featured: true,
+    text: 'Un sistema hecho para tu operación. En proyectos grandes trabajo con el equipo de desarrollo con el que colaboro.',
+    items: ['Punto de venta, stock y paneles con estadísticas', 'Usuarios y permisos', 'Alcance y plazos acordados antes de empezar', 'En proyectos grandes, con el equipo de desarrollo con el que trabajo'],
   },
 ]
 
 export const services = [
-  { icon: 'ShoppingBag', title: 'Tiendas online', text: 'Desde cero o sobre Tiendanube, con personalizaciones como selectores de packs y SKUs dinámicos.' },
-  { icon: 'LayoutDashboard', title: 'Sistemas de gestión', text: 'Punto de venta, control de stock y paneles con estadísticas, a medida de tu operación.' },
-  { icon: 'UtensilsCrossed', title: 'Pedidos para gastronomía', text: 'Menú pensado para el celular y pedidos por WhatsApp, sin pagar comisión a terceros.' },
-  { icon: 'Globe', title: 'Webs y landing pages', text: 'Una página clara con tus servicios, tu zona y un botón directo a WhatsApp, para que quien te busca en Google te escriba en vez de irse.' },
+  { icon: 'LayoutDashboard', title: 'Sistemas de gestión', text: 'Punto de venta, control de stock y paneles con estadísticas, hechos según cómo trabaja tu operación y no al revés.' },
+  { icon: 'ShoppingBag', title: 'Tiendas online', text: 'Catálogo, carrito y pedidos por WhatsApp. Desde cero o sobre Tiendanube, con personalizaciones como selectores de packs y SKUs dinámicos.' },
+  { icon: 'UtensilsCrossed', title: 'Pedidos para gastronomía', text: 'Carta pensada para el celular y pedidos directo a tu WhatsApp, sin plataformas que cobren comisión por pedido.' },
+  { icon: 'Globe', title: 'Webs y landing pages', text: 'Una página clara con tus servicios y un botón directo a WhatsApp, para que quien te busca te escriba.' },
 ]
 
 export const erp = {
   title: 'ERP industrial a medida',
-  lead: 'Sistema completo para una industria de alimentos: producción, stock, contabilidad, impuestos y reportes, conectados de punta a punta. Proyecto de equipo, de más de un año, en producción.',
-  role: 'Mi rol: QA y revisión técnica dentro del equipo de desarrollo. Las cifras son del sistema completo, construido por el equipo.',
+  lead: 'Sistema para una industria de alimentos, desarrollado por un equipo durante más de un año y hoy en producción. Mi rol fue QA y revisión técnica.',
+  role: 'Las cifras corresponden al sistema completo. Es el equipo de desarrollo con el que trabajo en proyectos grandes.',
   stats: [
     { value: '370 mil+', label: 'líneas de Python' },
     { value: '900+', label: 'migraciones de base de datos' },
@@ -109,25 +109,25 @@ export const projects = [
 ]
 
 export const steps = [
-  { title: 'Charlamos y definimos qué necesitás', text: 'Con un alcance claro y sin tecnicismos.' },
-  { title: 'Entregas por etapas', text: 'Ves avances reales y decidimos juntos en cada paso.' },
-  { title: 'Lanzamiento y soporte', text: 'Te acompaño después de publicar.' },
+  { title: 'Charlamos y acordamos el alcance', text: 'Me contás cómo trabaja tu negocio y te paso qué incluye, a qué precio y qué queda afuera, antes de empezar.' },
+  { title: 'Entregas por etapas', text: 'Vas viendo el sistema funcionando en cada etapa y decidimos juntos qué ajustar.' },
+  { title: 'Publicación y soporte', text: 'Publico el proyecto. El soporte posterior depende del plan y se acuerda al cotizar.' },
 ]
 
 export const offers = [
   {
-    id: 'tiendas', code: 'FRK-001', name: 'Tiendas online', title: 'Tienda online a medida',
+    id: 'gestion', code: 'FRK-001', name: 'Sistemas de gestión', title: 'Sistema de gestión a medida',
+    text: 'Punto de venta, control de stock y paneles con estadísticas, hechos según cómo trabaja tu negocio. Aplico la revisión técnica que practiqué como QA en un ERP industrial.',
+    status: 'Disponible', stack: ['React', 'TypeScript'], back: 'Python, FastAPI', data: 'PostgreSQL',
+  },
+  {
+    id: 'tiendas', code: 'FRK-002', name: 'Tiendas online', title: 'Tienda online a medida',
     text: 'Catálogo, carrito y pedidos por WhatsApp, publicados en Vercel, para que tu negocio venda sin depender de terceros.',
     status: 'Disponible', stack: ['React', 'Vite', 'Tailwind CSS'], back: 'Node.js, Firebase', data: 'Supabase, Firebase',
   },
   {
-    id: 'pedidos', code: 'FRK-002', name: 'Pedidos por WhatsApp', title: 'Pedidos para gastronomía',
+    id: 'pedidos', code: 'FRK-003', name: 'Pedidos por WhatsApp', title: 'Pedidos para gastronomía',
     text: 'Menú pensado para el celular, con versión web instalable y app React Native. Los pedidos llegan directo a tu WhatsApp.',
     status: 'Disponible', stack: ['React', 'React Native', 'PWA'], back: 'Node.js', data: 'Firebase',
-  },
-  {
-    id: 'gestion', code: 'FRK-003', name: 'Sistemas de gestión', title: 'Sistema de gestión a medida',
-    text: 'Punto de venta, control de stock y paneles con estadísticas, hechos según cómo trabaja tu negocio. Sumo la mirada de QA que desarrollé en un ERP industrial: pruebo antes de entregarte.',
-    status: 'Disponible', stack: ['React', 'TypeScript'], back: 'Python, FastAPI', data: 'PostgreSQL',
   },
 ]

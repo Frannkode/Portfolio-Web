@@ -8,7 +8,7 @@ export function Plans() {
         <div className="feature__head">
           <h2 data-reveal>Planes<br />y precios</h2>
           <div className="feature__desc" data-reveal style={{ '--i': 1 }}>
-            <p>Valores de referencia en pesos argentinos. El precio final se confirma según el alcance.</p>
+            <p>Valores de referencia en pesos argentinos. El precio final se confirma según el alcance, antes de empezar.</p>
           </div>
         </div>
         <div className="plans">
@@ -33,6 +33,7 @@ export function Plans() {
             </article>
           ))}
         </div>
+        <p className="plans__note" data-reveal>El soporte posterior a la publicación depende del plan y se acuerda al cotizar.</p>
       </div>
     </section>
   )

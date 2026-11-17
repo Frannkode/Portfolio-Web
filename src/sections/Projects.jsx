@@ -12,9 +12,9 @@ export function Projects() {
     <section id="proyectos" className="feature">
       <div className="wrap">
         <div className="feature__head">
-          <h2 data-reveal>Tiendas y sistemas<br />a medida</h2>
+          <h2 data-reveal>Lo que ya<br />construí</h2>
           <div className="feature__desc" data-reveal style={{ '--i': 1 }}>
-            <p>Cada proyecto resuelve un problema concreto de un negocio. Podés ver la demo en vivo y el código, cuando está disponible.</p>
+            <p>Pedidos, tiendas y cartas digitales para comercios y restaurantes. Demo en vivo y código, cuando están disponibles.</p>
             <a className="more" href="https://github.com/Frannkode" target="_blank" rel="noreferrer">Ver el código en GitHub<span aria-hidden="true"> →</span><span className="sr"> (abre en una pestaña nueva)</span></a>
           </div>
         </div>

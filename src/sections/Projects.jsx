@@ -14,7 +14,7 @@ export function Projects() {
         <div className="feature__head">
           <h2 data-reveal>Lo que ya<br />construí</h2>
           <div className="feature__desc" data-reveal style={{ '--i': 1 }}>
-            <p>Pedidos, tiendas y cartas digitales para comercios y restaurantes. Demo en vivo y código, cuando están disponibles.</p>
+            <p>Pedidos, tiendas y cartas digitales para comercios y restaurantes. Los marcados como proyecto propio son trabajos que armé por mi cuenta. Demo en vivo y código, cuando están disponibles.</p>
             <a className="more" href="https://github.com/Frannkode" target="_blank" rel="noreferrer">Ver el código en GitHub<span aria-hidden="true"> →</span><span className="sr"> (abre en una pestaña nueva)</span></a>
           </div>
         </div>
@@ -57,7 +57,7 @@ export function Projects() {
               <div className="pc__body">
                 <div>
                   <h3>{p.title}</h3>
-                  <p className="pc__sub">{p.subtitle}</p>
+                  <p className="pc__sub">{p.subtitle} · {p.kind}</p>
                 </div>
                 <p className="pc__text">{p.text}</p>
                 {p.result && <p className="result"><b>Lo que cambió</b> {p.result}</p>}

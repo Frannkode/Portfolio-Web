@@ -378,3 +378,8 @@ button { font: inherit; color: inherit; }
 @media (max-width: 640px) { .about { grid-template-columns: 1fr; } .about__img { width: 112px; height: 112px; } }
 
 .plans__note { margin-top: 20px; color: var(--ink-3); font-size: 0.9375rem; max-width: 60ch; }
+
+.faq details { border-top: 1px solid var(--line); }
+.faq details:first-child { border-top: 0; }
+.faq summary { cursor: pointer; padding: 18px 22px; min-height: 44px; font-weight: 510; color: var(--ink); }
+.faq details p { padding: 0 22px 18px; color: var(--ink-2); max-width: 62ch; }

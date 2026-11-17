@@ -33,7 +33,7 @@ export function Plans() {
             </article>
           ))}
         </div>
-        <p className="plans__note" data-reveal>El soporte posterior a la publicación depende del plan y se acuerda al cotizar.</p>
+        <p className="plans__note" data-reveal>Todos los planes incluyen 3 meses de soporte sin cargo y el código es tuyo al terminar. Se empieza con un anticipo del 40%.</p>
       </div>
     </section>
   )

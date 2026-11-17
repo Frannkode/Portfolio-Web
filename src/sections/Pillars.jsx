@@ -2,7 +2,7 @@ import { IsoLayers, IsoCubes, IsoBars } from '../components/Iso'
 
 const items = [
   { Art: IsoLayers, title: 'Hablás con quien programa', text: 'Quien te cotiza es quien escribe el código y te contesta por WhatsApp. Sin intermediarios ni cuentas asignadas.' },
-  { Art: IsoCubes, title: 'Precio claro desde el inicio', text: 'Planes de referencia a la vista: landing desde $80.000, web o tienda $250.000, software a medida desde $1.600.000. El precio final se confirma según el alcance, antes de empezar.' },
+  { Art: IsoCubes, title: 'Precio claro desde el inicio', text: 'Ves el valor de referencia antes de escribir. El alcance queda por escrito, el anticipo es del 40% y el código es tuyo al terminar.' },
   { Art: IsoBars, title: 'Canal propio, sin comisiones', text: 'Tus pedidos llegan directo a tu WhatsApp, sin plataformas en el medio que cobren un porcentaje por cada venta.' },
 ]
 

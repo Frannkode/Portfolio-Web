@@ -9,6 +9,7 @@ export function Erp() {
           <div className="feature__desc" data-reveal style={{ '--i': 1 }}>
             <p>{erp.lead}</p>
             <p style={{ color: 'var(--ink-3)', fontSize: '0.9375rem' }}>{erp.role}</p>
+            <p style={{ color: 'var(--ink-3)', fontSize: '0.9375rem' }}>{erp.meaning}</p>
           </div>
         </div>
         <div className="panel panel--spot" data-reveal>

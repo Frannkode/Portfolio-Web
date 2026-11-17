@@ -1,7 +1,5 @@
 import { steps } from '../data/portfolio'
 
-const states = ['st--done', 'st--done', 'st--live']
-
 export function Process() {
   return (
     <section id="proceso" className="feature">
@@ -17,7 +15,7 @@ export function Process() {
           <ul className="steps">
             {steps.map((s, i) => (
               <li className="step" key={s.title}>
-                <span className={`st ${states[i]}`} aria-hidden="true" />
+                <span className={"st st--live"} aria-hidden="true" />
                 <div><b>{s.title}</b><span>{s.text}</span></div>
                 <em>Etapa {i + 1}</em>
               </li>

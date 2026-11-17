@@ -13,9 +13,9 @@ const side = [
 ]
 
 const etapas = [
-  ['st--live', 'Acordamos el alcance', 'qué incluye, a qué precio y qué queda afuera'],
+  ['st--live', 'Acordamos el alcance', 'por escrito, con anticipo del 40%'],
   ['st--live', 'Entrega por etapas', 'ves el sistema funcionando en cada una'],
-  ['st--live', 'Publicación y soporte', 'el soporte depende del plan'],
+  ['st--live', 'Publicación y soporte', '3 meses de soporte sin cargo'],
 ]
 
 export function Hero() {
@@ -29,11 +29,11 @@ export function Hero() {
         <h1>Punto de venta, stock y paneles a medida para tu pyme</h1>
         <div className="hero__row">
           <p className="hero__sub">
-            Soy Franco, desarrollador en Reconquista, Santa Fe. Hablás directo con quien programa tu sistema y ves el precio de referencia desde el primer mensaje: software a medida desde $1.600.000. Los planes completos están más abajo.
+            Soy Franco, desarrollador en Reconquista con más de 6 años programando. Si tu negocio todavía vive en Excel y mensajes sueltos, te armo un sistema a tu medida, a distancia o en persona. Hablás directo conmigo y el precio de referencia está a la vista: desde $1.600.000.
           </p>
           <p className="hero__new">
-            <b>Experiencia en equipo</b>
-            <a href="#erp" onClick={(e) => go(e, '#erp')}>ERP industrial (QA) →</a>
+            <b>Caso real</b>
+            <a href="#proyectos" onClick={(e) => go(e, '#proyectos')}>ViciosBurger: de 8 a 50+ pedidos por semana →</a>
           </p>
         </div>
         <div className="hero__cta">

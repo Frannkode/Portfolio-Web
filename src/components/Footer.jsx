@@ -33,7 +33,6 @@ export function Footer() {
             <ul>
               <li><a href={contact.whatsapp} target="_blank" rel="noreferrer">WhatsApp</a></li>
               <li><a href={`mailto:${contact.email}`}>Email</a></li>
-              <li><a href={`mailto:${contact.email}?subject=Busco%20desarrollador%20para%20mi%20equipo`}>¿Armás un equipo? Escribime</a></li>
             </ul>
           </div>
         </div>

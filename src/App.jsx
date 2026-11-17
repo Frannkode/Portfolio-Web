@@ -12,6 +12,7 @@ import { Erp } from './sections/Erp'
 import { Plans } from './sections/Plans'
 import { About } from './sections/About'
 import { Process } from './sections/Process'
+import { Faq } from './sections/Faq'
 import { Contact } from './sections/Contact'
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
         <Erp />
         <Process />
         <About />
+        <Faq />
         <Contact />
       </main>
       <Footer />

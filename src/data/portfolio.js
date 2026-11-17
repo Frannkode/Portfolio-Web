@@ -18,14 +18,14 @@ export const plans = [
     items: ['Tus servicios y tu zona en una sola página', 'Botón directo a WhatsApp', 'Se ve bien en el celular', 'Publicada en internet'],
   },
   {
-    id: 'web', name: 'Web o tienda', price: '$250.000', from: false,
+    id: 'web', name: 'Web o tienda', price: '$250.000', from: true,
     text: 'Una web más completa o una tienda para vender online.',
     items: ['Varias secciones, o catálogo y carrito', 'Pedidos por WhatsApp', 'Diseño a medida de tu marca', 'Publicada y lista para usar'],
   },
   {
     id: 'sistema', name: 'Software a medida', price: '$1.600.000', from: true, featured: true,
-    text: 'Un sistema hecho para tu operación. En proyectos grandes trabajo con el equipo de desarrollo con el que colaboro.',
-    items: ['Punto de venta, stock y paneles con estadísticas', 'Usuarios y permisos', 'Alcance y plazos acordados antes de empezar', 'En proyectos grandes, con el equipo de desarrollo con el que trabajo'],
+    text: 'Un sistema hecho para tu operación: lo que hoy hacés en Excel, cuaderno o WhatsApp, en un solo lugar. En proyectos grandes cuento con el equipo de Gii.',
+    items: ['Punto de venta, stock y paneles con estadísticas', 'Usuarios y permisos', 'Alcance acordado por escrito antes de empezar', 'El código es tuyo al terminar'],
   },
 ]
 
@@ -39,7 +39,8 @@ export const services = [
 export const erp = {
   title: 'ERP industrial a medida',
   lead: 'Sistema para una industria de alimentos, desarrollado por un equipo durante más de un año y hoy en producción. Mi rol fue QA y revisión técnica.',
-  role: 'Las cifras corresponden al sistema completo. Es el equipo de desarrollo con el que trabajo en proyectos grandes.',
+  role: 'Las cifras corresponden al sistema completo, desarrollado en Gii, la empresa donde trabajo y el equipo con el que cuento en proyectos grandes.',
+  meaning: 'Qué significa para tu negocio: reviso tu sistema con el mismo criterio que uno que ya mueve producción, stock y facturación de una industria.',
   stats: [
     { value: '370 mil+', label: 'líneas de Python' },
     { value: '900+', label: 'migraciones de base de datos' },
@@ -64,7 +65,8 @@ export const projects = [
     title: 'ViciosBurger',
     subtitle: 'Pedidos online para una hamburguesería',
     text: 'Pensado para el celular, con versión web instalable y app React Native. Canal propio por WhatsApp, sin intermediarios ni comisiones.',
-    result: 'Los pedidos entran ordenados y dejó de contestar consulta por consulta.',
+    kind: 'Cliente real',
+    result: 'Pasó de 8 a más de 50 pedidos por semana.',
     tech: ['React', 'React Native', 'Node.js'],
     phones: [
       { src: '/assets/img/projects/vicios-menu.webp', alt: 'Menú de ViciosBurger en el celular' },
@@ -76,6 +78,7 @@ export const projects = [
   {
     title: 'FullBebidas',
     subtitle: 'E-commerce de bebidas',
+    kind: 'Cliente real, en uso',
     text: 'Plataforma a medida con carga rápida y un proceso de compra simple en el celular.',
     tech: ['React', 'TypeScript', 'Tailwind CSS'],
     image: '/assets/img/projects/fullbebidas.webp',
@@ -84,6 +87,7 @@ export const projects = [
   {
     title: 'QuickOrder',
     subtitle: 'Sistema de pedidos en tiempo real',
+    kind: 'Proyecto propio',
     text: 'Toma de pedidos con una interfaz ultrarrápida para los operarios, pensada para las horas pico.',
     tech: ['React', 'TypeScript', 'Firebase'],
     image: '/assets/img/projects/quickorder.webp',
@@ -92,6 +96,7 @@ export const projects = [
   {
     title: 'MotoPartes',
     subtitle: 'Tienda online de repuestos de moto',
+    kind: 'Proyecto propio',
     text: 'E-commerce de catálogo para un rubro técnico, con búsqueda y navegación por categorías.',
     tech: ['React', 'JavaScript'],
     image: '/assets/img/projects/motopartes.webp',
@@ -101,7 +106,8 @@ export const projects = [
     title: 'El Cruce',
     subtitle: 'Carta digital para un restaurante',
     text: 'Una carta QR que el cliente abre desde la mesa y pedidos centralizados en una tablet, en lugar de cartas en papel y teléfonos colapsados.',
-    result: 'Los clientes ya no tienen problemas para ver la carta.',
+    kind: 'Cliente real',
+    result: 'Dejó de recibir quejas sobre la carta.',
     tech: ['React', 'Tailwind CSS', 'Vercel'],
     image: '/assets/img/projects/elcruce.webp',
     links: { live: 'https://elcruce.vercel.app', github: 'https://github.com/Frannkode/ElCruceRestaurant' },
@@ -109,9 +115,9 @@ export const projects = [
 ]
 
 export const steps = [
-  { title: 'Charlamos y acordamos el alcance', text: 'Me contás cómo trabaja tu negocio y te paso qué incluye, a qué precio y qué queda afuera, antes de empezar.' },
+  { title: 'Charlamos y acordamos el alcance', text: 'Me contás cómo trabaja tu negocio y te paso por escrito qué incluye, a qué precio y qué queda afuera. Para empezar se abona un anticipo del 40%.' },
   { title: 'Entregas por etapas', text: 'Vas viendo el sistema funcionando en cada etapa y decidimos juntos qué ajustar.' },
-  { title: 'Publicación y soporte', text: 'Publico el proyecto. El soporte posterior depende del plan y se acuerda al cotizar.' },
+  { title: 'Publicación y soporte', text: 'Publico el proyecto y te explico cómo usarlo. Incluye 3 meses de soporte sin cargo y el código es tuyo.' },
 ]
 
 export const offers = [
@@ -130,4 +136,12 @@ export const offers = [
     text: 'Menú pensado para el celular, con versión web instalable y app React Native. Los pedidos llegan directo a tu WhatsApp.',
     status: 'Disponible', stack: ['React', 'React Native', 'PWA'], back: 'Node.js', data: 'Firebase',
   },
+]
+
+export const faq = [
+  { q: '¿Cómo se paga?', a: 'Se abona un anticipo del 40% del precio para empezar. El precio final se confirma por escrito según el alcance, antes de arrancar.' },
+  { q: '¿De quién es el código?', a: 'Tuyo. Al terminar el proyecto, el código es de quien lo compra.' },
+  { q: '¿Qué pasa si necesito cambios después?', a: 'Todos los proyectos incluyen 3 meses de soporte sin cargo.' },
+  { q: '¿Trabajás fuera de Reconquista?', a: 'Sí. Trabajo a distancia con cualquier lugar, y en persona en los alrededores de Reconquista.' },
+  { q: '¿Trabajás solo?', a: 'Hablás directo conmigo. En proyectos grandes cuento con el equipo de Gii, la empresa donde trabajo.' },
 ]
